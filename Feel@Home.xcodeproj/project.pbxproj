@@ -1,0 +1,495 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B22EA3111A7A422700455241 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22EA3101A7A422700455241 /* Foundation.framework */; };
+		B22EA3131A7A422700455241 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22EA3121A7A422700455241 /* CoreGraphics.framework */; };
+		B22EA3151A7A422700455241 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22EA3141A7A422700455241 /* UIKit.framework */; };
+		B22EA31B1A7A422700455241 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B22EA3191A7A422700455241 /* InfoPlist.strings */; };
+		B22EA31D1A7A422700455241 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B22EA31C1A7A422700455241 /* main.m */; };
+		B22EA3211A7A422700455241 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B22EA3201A7A422700455241 /* AppDelegate.m */; };
+		B22EA3241A7A422700455241 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22EA3221A7A422700455241 /* Main_iPhone.storyboard */; };
+		B22EA3271A7A422700455241 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B22EA3251A7A422700455241 /* Main_iPad.storyboard */; };
+		B22EA32A1A7A422700455241 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B22EA3291A7A422700455241 /* MasterViewController.m */; };
+		B22EA32D1A7A422700455241 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B22EA32C1A7A422700455241 /* DetailViewController.m */; };
+		B22EA32F1A7A422700455241 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B22EA32E1A7A422700455241 /* Images.xcassets */; };
+		B22EA3361A7A422700455241 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22EA3351A7A422700455241 /* XCTest.framework */; };
+		B22EA3371A7A422700455241 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22EA3101A7A422700455241 /* Foundation.framework */; };
+		B22EA3381A7A422700455241 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22EA3141A7A422700455241 /* UIKit.framework */; };
+		B22EA3401A7A422700455241 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B22EA33E1A7A422700455241 /* InfoPlist.strings */; };
+		B22EA3421A7A422700455241 /* Feel_HomeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B22EA3411A7A422700455241 /* Feel_HomeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B22EA3391A7A422700455241 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B22EA3051A7A422700455241 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B22EA30C1A7A422700455241;
+			remoteInfo = "Feel@Home";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B22EA30D1A7A422700455241 /* Feel@Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feel@Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B22EA3101A7A422700455241 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B22EA3121A7A422700455241 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B22EA3141A7A422700455241 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B22EA3181A7A422700455241 /* Feel@Home-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Feel@Home-Info.plist"; sourceTree = "<group>"; };
+		B22EA31A1A7A422700455241 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B22EA31C1A7A422700455241 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B22EA31E1A7A422700455241 /* Feel@Home-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Feel@Home-Prefix.pch"; sourceTree = "<group>"; };
+		B22EA31F1A7A422700455241 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B22EA3201A7A422700455241 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B22EA3231A7A422700455241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		B22EA3261A7A422700455241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		B22EA3281A7A422700455241 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		B22EA3291A7A422700455241 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		B22EA32B1A7A422700455241 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		B22EA32C1A7A422700455241 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		B22EA32E1A7A422700455241 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B22EA3341A7A422700455241 /* Feel@HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Feel@HomeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B22EA3351A7A422700455241 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B22EA33D1A7A422700455241 /* Feel@HomeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Feel@HomeTests-Info.plist"; sourceTree = "<group>"; };
+		B22EA33F1A7A422700455241 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B22EA3411A7A422700455241 /* Feel_HomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Feel_HomeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B22EA30A1A7A422700455241 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B22EA3131A7A422700455241 /* CoreGraphics.framework in Frameworks */,
+				B22EA3151A7A422700455241 /* UIKit.framework in Frameworks */,
+				B22EA3111A7A422700455241 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B22EA3311A7A422700455241 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B22EA3361A7A422700455241 /* XCTest.framework in Frameworks */,
+				B22EA3381A7A422700455241 /* UIKit.framework in Frameworks */,
+				B22EA3371A7A422700455241 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B22EA3041A7A422700455241 = {
+			isa = PBXGroup;
+			children = (
+				B22EA3161A7A422700455241 /* Feel@Home */,
+				B22EA33B1A7A422700455241 /* Feel@HomeTests */,
+				B22EA30F1A7A422700455241 /* Frameworks */,
+				B22EA30E1A7A422700455241 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B22EA30E1A7A422700455241 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B22EA30D1A7A422700455241 /* Feel@Home.app */,
+				B22EA3341A7A422700455241 /* Feel@HomeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B22EA30F1A7A422700455241 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B22EA3101A7A422700455241 /* Foundation.framework */,
+				B22EA3121A7A422700455241 /* CoreGraphics.framework */,
+				B22EA3141A7A422700455241 /* UIKit.framework */,
+				B22EA3351A7A422700455241 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B22EA3161A7A422700455241 /* Feel@Home */ = {
+			isa = PBXGroup;
+			children = (
+				B22EA31F1A7A422700455241 /* AppDelegate.h */,
+				B22EA3201A7A422700455241 /* AppDelegate.m */,
+				B22EA3221A7A422700455241 /* Main_iPhone.storyboard */,
+				B22EA3251A7A422700455241 /* Main_iPad.storyboard */,
+				B22EA3281A7A422700455241 /* MasterViewController.h */,
+				B22EA3291A7A422700455241 /* MasterViewController.m */,
+				B22EA32B1A7A422700455241 /* DetailViewController.h */,
+				B22EA32C1A7A422700455241 /* DetailViewController.m */,
+				B22EA32E1A7A422700455241 /* Images.xcassets */,
+				B22EA3171A7A422700455241 /* Supporting Files */,
+			);
+			path = "Feel@Home";
+			sourceTree = "<group>";
+		};
+		B22EA3171A7A422700455241 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B22EA3181A7A422700455241 /* Feel@Home-Info.plist */,
+				B22EA3191A7A422700455241 /* InfoPlist.strings */,
+				B22EA31C1A7A422700455241 /* main.m */,
+				B22EA31E1A7A422700455241 /* Feel@Home-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B22EA33B1A7A422700455241 /* Feel@HomeTests */ = {
+			isa = PBXGroup;
+			children = (
+				B22EA3411A7A422700455241 /* Feel_HomeTests.m */,
+				B22EA33C1A7A422700455241 /* Supporting Files */,
+			);
+			path = "Feel@HomeTests";
+			sourceTree = "<group>";
+		};
+		B22EA33C1A7A422700455241 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B22EA33D1A7A422700455241 /* Feel@HomeTests-Info.plist */,
+				B22EA33E1A7A422700455241 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B22EA30C1A7A422700455241 /* Feel@Home */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B22EA3451A7A422700455241 /* Build configuration list for PBXNativeTarget "Feel@Home" */;
+			buildPhases = (
+				B22EA3091A7A422700455241 /* Sources */,
+				B22EA30A1A7A422700455241 /* Frameworks */,
+				B22EA30B1A7A422700455241 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Feel@Home";
+			productName = "Feel@Home";
+			productReference = B22EA30D1A7A422700455241 /* Feel@Home.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B22EA3331A7A422700455241 /* Feel@HomeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B22EA3481A7A422700455241 /* Build configuration list for PBXNativeTarget "Feel@HomeTests" */;
+			buildPhases = (
+				B22EA3301A7A422700455241 /* Sources */,
+				B22EA3311A7A422700455241 /* Frameworks */,
+				B22EA3321A7A422700455241 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B22EA33A1A7A422700455241 /* PBXTargetDependency */,
+			);
+			name = "Feel@HomeTests";
+			productName = "Feel@HomeTests";
+			productReference = B22EA3341A7A422700455241 /* Feel@HomeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B22EA3051A7A422700455241 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Robin LAMBERTZ";
+				TargetAttributes = {
+					B22EA3331A7A422700455241 = {
+						TestTargetID = B22EA30C1A7A422700455241;
+					};
+				};
+			};
+			buildConfigurationList = B22EA3081A7A422700455241 /* Build configuration list for PBXProject "Feel@Home" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B22EA3041A7A422700455241;
+			productRefGroup = B22EA30E1A7A422700455241 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B22EA30C1A7A422700455241 /* Feel@Home */,
+				B22EA3331A7A422700455241 /* Feel@HomeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B22EA30B1A7A422700455241 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B22EA3271A7A422700455241 /* Main_iPad.storyboard in Resources */,
+				B22EA32F1A7A422700455241 /* Images.xcassets in Resources */,
+				B22EA3241A7A422700455241 /* Main_iPhone.storyboard in Resources */,
+				B22EA31B1A7A422700455241 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B22EA3321A7A422700455241 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B22EA3401A7A422700455241 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B22EA3091A7A422700455241 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B22EA3211A7A422700455241 /* AppDelegate.m in Sources */,
+				B22EA32A1A7A422700455241 /* MasterViewController.m in Sources */,
+				B22EA31D1A7A422700455241 /* main.m in Sources */,
+				B22EA32D1A7A422700455241 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B22EA3301A7A422700455241 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B22EA3421A7A422700455241 /* Feel_HomeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B22EA33A1A7A422700455241 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B22EA30C1A7A422700455241 /* Feel@Home */;
+			targetProxy = B22EA3391A7A422700455241 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B22EA3191A7A422700455241 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B22EA31A1A7A422700455241 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B22EA3221A7A422700455241 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B22EA3231A7A422700455241 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		B22EA3251A7A422700455241 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B22EA3261A7A422700455241 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		B22EA33E1A7A422700455241 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B22EA33F1A7A422700455241 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B22EA3431A7A422700455241 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B22EA3441A7A422700455241 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B22EA3461A7A422700455241 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Feel@Home/Feel@Home-Prefix.pch";
+				INFOPLIST_FILE = "Feel@Home/Feel@Home-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B22EA3471A7A422700455241 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Feel@Home/Feel@Home-Prefix.pch";
+				INFOPLIST_FILE = "Feel@Home/Feel@Home-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B22EA3491A7A422700455241 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Feel@Home.app/Feel@Home";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Feel@Home/Feel@Home-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Feel@HomeTests/Feel@HomeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		B22EA34A1A7A422700455241 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Feel@Home.app/Feel@Home";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Feel@Home/Feel@Home-Prefix.pch";
+				INFOPLIST_FILE = "Feel@HomeTests/Feel@HomeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B22EA3081A7A422700455241 /* Build configuration list for PBXProject "Feel@Home" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B22EA3431A7A422700455241 /* Debug */,
+				B22EA3441A7A422700455241 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B22EA3451A7A422700455241 /* Build configuration list for PBXNativeTarget "Feel@Home" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B22EA3461A7A422700455241 /* Debug */,
+				B22EA3471A7A422700455241 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B22EA3481A7A422700455241 /* Build configuration list for PBXNativeTarget "Feel@HomeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B22EA3491A7A422700455241 /* Debug */,
+				B22EA34A1A7A422700455241 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B22EA3051A7A422700455241 /* Project object */;
+}
