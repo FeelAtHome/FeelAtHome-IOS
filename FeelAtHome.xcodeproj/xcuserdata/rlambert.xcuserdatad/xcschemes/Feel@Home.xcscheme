@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B22EA30C1A7A422700455241"
                BuildableName = "Feel@Home.app"
-               BlueprintName = "Feel@Home"
-               ReferencedContainer = "container:Feel@Home.xcodeproj">
+               BlueprintName = "FeelAtHome"
+               ReferencedContainer = "container:FeelAtHome.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B22EA3331A7A422700455241"
                BuildableName = "Feel@HomeTests.xctest"
-               BlueprintName = "Feel@HomeTests"
-               ReferencedContainer = "container:Feel@Home.xcodeproj">
+               BlueprintName = "FeelAtHomeTests"
+               ReferencedContainer = "container:FeelAtHome.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B22EA30C1A7A422700455241"
             BuildableName = "Feel@Home.app"
-            BlueprintName = "Feel@Home"
-            ReferencedContainer = "container:Feel@Home.xcodeproj">
+            BlueprintName = "FeelAtHome"
+            ReferencedContainer = "container:FeelAtHome.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,11 +63,16 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B22EA30C1A7A422700455241"
             BuildableName = "Feel@Home.app"
-            BlueprintName = "Feel@Home"
-            ReferencedContainer = "container:Feel@Home.xcodeproj">
+            BlueprintName = "FeelAtHome"
+            ReferencedContainer = "container:FeelAtHome.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
+         <AdditionalOption
+            key = "OBJC_PRINT_EXCEPTIONS"
+            value = "YES"
+            isEnabled = "YES">
+         </AdditionalOption>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
@@ -81,8 +86,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B22EA30C1A7A422700455241"
             BuildableName = "Feel@Home.app"
-            BlueprintName = "Feel@Home"
-            ReferencedContainer = "container:Feel@Home.xcodeproj">
+            BlueprintName = "FeelAtHome"
+            ReferencedContainer = "container:FeelAtHome.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

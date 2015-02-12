@@ -48,14 +48,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B22EA30D1A7A422700455241 /* Feel@Home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feel@Home.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B22EA30D1A7A422700455241 /* FeelAtHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeelAtHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22EA3101A7A422700455241 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B22EA3121A7A422700455241 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B22EA3141A7A422700455241 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		B22EA3181A7A422700455241 /* Feel@Home-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Feel@Home-Info.plist"; sourceTree = "<group>"; };
+		B22EA3181A7A422700455241 /* FeelAtHome-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FeelAtHome-Info.plist"; sourceTree = "<group>"; };
 		B22EA31A1A7A422700455241 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B22EA31C1A7A422700455241 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B22EA31E1A7A422700455241 /* Feel@Home-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Feel@Home-Prefix.pch"; sourceTree = "<group>"; };
+		B22EA31E1A7A422700455241 /* FeelAtHome-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FeelAtHome-Prefix.pch"; sourceTree = "<group>"; };
 		B22EA31F1A7A422700455241 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B22EA3201A7A422700455241 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B22EA3231A7A422700455241 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
@@ -65,9 +65,9 @@
 		B22EA32B1A7A422700455241 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		B22EA32C1A7A422700455241 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		B22EA32E1A7A422700455241 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B22EA3341A7A422700455241 /* Feel@HomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Feel@HomeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B22EA3341A7A422700455241 /* FeelAtHomeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FeelAtHomeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22EA3351A7A422700455241 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		B22EA33D1A7A422700455241 /* Feel@HomeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Feel@HomeTests-Info.plist"; sourceTree = "<group>"; };
+		B22EA33D1A7A422700455241 /* FeelAtHomeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FeelAtHomeTests-Info.plist"; sourceTree = "<group>"; };
 		B22EA33F1A7A422700455241 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B22EA3411A7A422700455241 /* Feel_HomeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Feel_HomeTests.m; sourceTree = "<group>"; };
 		B23B45421A8B72E400B36BDF /* ScenarioListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenarioListViewController.h; sourceTree = "<group>"; };
@@ -161,8 +161,8 @@
 		B22EA30E1A7A422700455241 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B22EA30D1A7A422700455241 /* Feel@Home.app */,
-				B22EA3341A7A422700455241 /* Feel@HomeTests.xctest */,
+				B22EA30D1A7A422700455241 /* FeelAtHome.app */,
+				B22EA3341A7A422700455241 /* FeelAtHomeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -216,10 +216,10 @@
 		B22EA3171A7A422700455241 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B22EA3181A7A422700455241 /* Feel@Home-Info.plist */,
+				B22EA3181A7A422700455241 /* FeelAtHome-Info.plist */,
 				B22EA3191A7A422700455241 /* InfoPlist.strings */,
 				B22EA31C1A7A422700455241 /* main.m */,
-				B22EA31E1A7A422700455241 /* Feel@Home-Prefix.pch */,
+				B22EA31E1A7A422700455241 /* FeelAtHome-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -236,7 +236,7 @@
 		B22EA33C1A7A422700455241 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B22EA33D1A7A422700455241 /* Feel@HomeTests-Info.plist */,
+				B22EA33D1A7A422700455241 /* FeelAtHomeTests-Info.plist */,
 				B22EA33E1A7A422700455241 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -245,9 +245,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B22EA30C1A7A422700455241 /* Feel@Home */ = {
+		B22EA30C1A7A422700455241 /* FeelAtHome */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B22EA3451A7A422700455241 /* Build configuration list for PBXNativeTarget "Feel@Home" */;
+			buildConfigurationList = B22EA3451A7A422700455241 /* Build configuration list for PBXNativeTarget "FeelAtHome" */;
 			buildPhases = (
 				B22EA3091A7A422700455241 /* Sources */,
 				B22EA30A1A7A422700455241 /* Frameworks */,
@@ -257,14 +257,14 @@
 			);
 			dependencies = (
 			);
-			name = "Feel@Home";
+			name = FeelAtHome;
 			productName = "Feel@Home";
-			productReference = B22EA30D1A7A422700455241 /* Feel@Home.app */;
+			productReference = B22EA30D1A7A422700455241 /* FeelAtHome.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B22EA3331A7A422700455241 /* Feel@HomeTests */ = {
+		B22EA3331A7A422700455241 /* FeelAtHomeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B22EA3481A7A422700455241 /* Build configuration list for PBXNativeTarget "Feel@HomeTests" */;
+			buildConfigurationList = B22EA3481A7A422700455241 /* Build configuration list for PBXNativeTarget "FeelAtHomeTests" */;
 			buildPhases = (
 				B22EA3301A7A422700455241 /* Sources */,
 				B22EA3311A7A422700455241 /* Frameworks */,
@@ -275,9 +275,9 @@
 			dependencies = (
 				B22EA33A1A7A422700455241 /* PBXTargetDependency */,
 			);
-			name = "Feel@HomeTests";
+			name = FeelAtHomeTests;
 			productName = "Feel@HomeTests";
-			productReference = B22EA3341A7A422700455241 /* Feel@HomeTests.xctest */;
+			productReference = B22EA3341A7A422700455241 /* FeelAtHomeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -289,12 +289,15 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Robin LAMBERTZ";
 				TargetAttributes = {
+					B22EA30C1A7A422700455241 = {
+						DevelopmentTeam = R6RMEU8B59;
+					};
 					B22EA3331A7A422700455241 = {
 						TestTargetID = B22EA30C1A7A422700455241;
 					};
 				};
 			};
-			buildConfigurationList = B22EA3081A7A422700455241 /* Build configuration list for PBXProject "Feel@Home" */;
+			buildConfigurationList = B22EA3081A7A422700455241 /* Build configuration list for PBXProject "FeelAtHome" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -307,8 +310,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B22EA30C1A7A422700455241 /* Feel@Home */,
-				B22EA3331A7A422700455241 /* Feel@HomeTests */,
+				B22EA30C1A7A422700455241 /* FeelAtHome */,
+				B22EA3331A7A422700455241 /* FeelAtHomeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -372,7 +375,7 @@
 /* Begin PBXTargetDependency section */
 		B22EA33A1A7A422700455241 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B22EA30C1A7A422700455241 /* Feel@Home */;
+			target = B22EA30C1A7A422700455241 /* FeelAtHome */;
 			targetProxy = B22EA3391A7A422700455241 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -493,10 +496,13 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Feel@Home/Feel@Home-Prefix.pch";
-				INFOPLIST_FILE = "Feel@Home/Feel@Home-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Feel@Home/FeelAtHome-Prefix.pch";
+				INFOPLIST_FILE = "Feel@Home/FeelAtHome-Info.plist";
+				PRODUCT_NAME = FeelAtHome;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -508,11 +514,14 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Feel@Home/Feel@Home-Prefix.pch";
+				GCC_PREFIX_HEADER = "Feel@Home/FeelAtHome-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				INFOPLIST_FILE = "Feel@Home/Feel@Home-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Feel@Home/FeelAtHome-Info.plist";
+				PRODUCT_NAME = FeelAtHome;
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -534,8 +543,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "Feel@HomeTests/Feel@HomeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Feel@HomeTests/FeelAtHomeTests-Info.plist";
+				PRODUCT_NAME = FeelAtHomeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -553,8 +562,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Feel@Home/Feel@Home-Prefix.pch";
-				INFOPLIST_FILE = "Feel@HomeTests/Feel@HomeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "Feel@HomeTests/FeelAtHomeTests-Info.plist";
+				PRODUCT_NAME = FeelAtHomeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -563,7 +572,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B22EA3081A7A422700455241 /* Build configuration list for PBXProject "Feel@Home" */ = {
+		B22EA3081A7A422700455241 /* Build configuration list for PBXProject "FeelAtHome" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B22EA3431A7A422700455241 /* Debug */,
@@ -572,7 +581,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B22EA3451A7A422700455241 /* Build configuration list for PBXNativeTarget "Feel@Home" */ = {
+		B22EA3451A7A422700455241 /* Build configuration list for PBXNativeTarget "FeelAtHome" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B22EA3461A7A422700455241 /* Debug */,
@@ -581,7 +590,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B22EA3481A7A422700455241 /* Build configuration list for PBXNativeTarget "Feel@HomeTests" */ = {
+		B22EA3481A7A422700455241 /* Build configuration list for PBXNativeTarget "FeelAtHomeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B22EA3491A7A422700455241 /* Debug */,
