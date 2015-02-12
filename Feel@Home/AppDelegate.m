@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Scenario.h"
 
 @implementation AppDelegate
 
@@ -18,6 +19,21 @@
         UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
         splitViewController.delegate = (id)navigationController.topViewController;
     }
+    NSString *dateKey    = @"dateKey";
+    NSDate *lastRead    = (NSDate *)[[NSUserDefaults standardUserDefaults] objectForKey:dateKey];
+    if (lastRead == nil)     // App first run: set up user defaults.
+    {
+        NSArray *defaultScenarios = @[[[Scenario alloc] initWithConditions:@[] forActions:@[]]]; // TODO : Create default scenarios
+        NSDictionary *appDefaults  = [NSDictionary dictionaryWithObjects:@[[NSDate date], defaultScenarios] forKeys: @[dateKey, @"scenarios"]];
+
+        // do any other initialization you want to do here - e.g. the starting default values.
+        // [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"should_play_sounds"];
+        
+        // sync the defaults to disk
+     //   [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+
     return YES;
 }
 							

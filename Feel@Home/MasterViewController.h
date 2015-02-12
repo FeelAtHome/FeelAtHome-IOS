@@ -10,8 +10,9 @@
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController
+@interface MasterViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (strong, nonatomic) DetailViewController *detailViewController;
-
+//@property (strong, nonatomic) DetailViewController      *detailViewController;
+@property NSArray                   *sites;
+@property NSDictionary              *sitesData;
 @end
