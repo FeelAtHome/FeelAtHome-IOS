@@ -10,6 +10,12 @@
 
 @interface DetailCollectionViewCell : UICollectionViewCell
 @property (nonatomic, strong) IBOutlet UILabel *sliderName;
-@property (nonatomic, strong) IBOutlet UISlider *slider;
 
 @end
+
+@protocol DetailCollectionViewCellProtocol <NSObject>
+
+- (void)lightsSwitched: (DetailCollectionViewCell*)cell;
+
+@end
+

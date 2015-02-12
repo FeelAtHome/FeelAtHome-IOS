@@ -80,11 +80,18 @@
     return cell;
 }
 
+- (void) createObj:(id)obj
+{
+    [self.delegate choseCondition:obj];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // TODO : wait for segue ?
     NSLog(@"Selected condition");
-    [self.delegate choseCondition:[[self.conditionsClasses[indexPath.row] alloc] init]];
+    SetupViewController *nextView = [[self.conditionsClasses[indexPath.row] setupView] init];
+    nextView.delegate = self;
+    [self.navigationController pushViewController:nextView animated:YES];
 }
 
 /*

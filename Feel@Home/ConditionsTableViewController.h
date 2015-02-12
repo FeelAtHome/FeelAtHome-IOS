@@ -15,7 +15,7 @@
 
 @end
 
-@interface ConditionsTableViewController : UITableViewController
+@interface ConditionsTableViewController : UITableViewController<SetupViewControllerDelegate>
 @property NSArray *conditionsClasses;
 @property id <ConditionsTableViewControllerDelegate> delegate;
 @property Class selectedClass;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E9F822297C3D6FDA3D73FC9 /* libPods-FeelAtHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 260035BDDA7D3D41FFEF120C /* libPods-FeelAtHome.a */; };
 		B22EA3111A7A422700455241 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22EA3101A7A422700455241 /* Foundation.framework */; };
 		B22EA3131A7A422700455241 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22EA3121A7A422700455241 /* CoreGraphics.framework */; };
 		B22EA3151A7A422700455241 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22EA3141A7A422700455241 /* UIKit.framework */; };
@@ -30,6 +31,14 @@
 		B23B45501A8BCE8400B36BDF /* ConditionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23B454F1A8BCE8400B36BDF /* ConditionsTableViewController.m */; };
 		B23B45531A8BD1D300B36BDF /* ActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23B45521A8BD1D300B36BDF /* ActionsTableViewController.m */; };
 		B23B455C1A8BDE3A00B36BDF /* IfThenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23B455B1A8BDE3A00B36BDF /* IfThenViewController.m */; };
+		B288A5651A8CFDD400EEED21 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B288A5641A8CFDD400EEED21 /* SetupViewController.m */; };
+		B288A5691A8D00C100EEED21 /* MyfoxHeaterActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B288A5681A8D00C100EEED21 /* MyfoxHeaterActionView.xib */; };
+		B288A56E1A8D225200EEED21 /* MyfoxShutterActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B288A56D1A8D225200EEED21 /* MyfoxShutterActionView.xib */; };
+		B288A5701A8D226F00EEED21 /* MyfoxLightsActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B288A56F1A8D226F00EEED21 /* MyfoxLightsActionView.xib */; };
+		B288A5731A8D265200EEED21 /* TimeConditionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B288A5721A8D265200EEED21 /* TimeConditionViewController.xib */; };
+		B2B003E11A8CE634007BCFEB /* MyfoxAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B003DC1A8CE634007BCFEB /* MyfoxAuth.m */; };
+		B2B003E21A8CE634007BCFEB /* MyfoxHeaterAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B003DE1A8CE634007BCFEB /* MyfoxHeaterAction.m */; };
+		B2B003E31A8CE634007BCFEB /* MyfoxShutterAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B003E01A8CE634007BCFEB /* MyfoxShutterAction.m */; };
 		B2CF88191A827EFE005B71E9 /* MasterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CF88181A827EFE005B71E9 /* MasterCollectionViewCell.m */; };
 		B2CF881C1A82A24B005B71E9 /* DetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CF881B1A82A24B005B71E9 /* DetailCollectionViewCell.m */; };
 		B2EA9DDE1A8B593400E0A7E6 /* MyfoxLightsAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EA9DDD1A8B593400E0A7E6 /* MyfoxLightsAction.m */; };
@@ -48,6 +57,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		208FF295391BB1302B476401 /* Pods-FeelAtHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeelAtHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-FeelAtHome/Pods-FeelAtHome.release.xcconfig"; sourceTree = "<group>"; };
+		260035BDDA7D3D41FFEF120C /* libPods-FeelAtHome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FeelAtHome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50D5FBB21FE76C95E90D0C1C /* Pods-FeelAtHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeelAtHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FeelAtHome/Pods-FeelAtHome.debug.xcconfig"; sourceTree = "<group>"; };
 		B22EA30D1A7A422700455241 /* FeelAtHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeelAtHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22EA3101A7A422700455241 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B22EA3121A7A422700455241 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -84,13 +96,24 @@
 		B23B45521A8BD1D300B36BDF /* ActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionsTableViewController.m; sourceTree = "<group>"; };
 		B23B455A1A8BDE3A00B36BDF /* IfThenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IfThenViewController.h; sourceTree = "<group>"; };
 		B23B455B1A8BDE3A00B36BDF /* IfThenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IfThenViewController.m; sourceTree = "<group>"; };
+		B288A5631A8CFDD400EEED21 /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
+		B288A5641A8CFDD400EEED21 /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
+		B288A5681A8D00C100EEED21 /* MyfoxHeaterActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyfoxHeaterActionView.xib; sourceTree = "<group>"; };
+		B288A56D1A8D225200EEED21 /* MyfoxShutterActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyfoxShutterActionView.xib; sourceTree = "<group>"; };
+		B288A56F1A8D226F00EEED21 /* MyfoxLightsActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyfoxLightsActionView.xib; sourceTree = "<group>"; };
+		B288A5721A8D265200EEED21 /* TimeConditionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeConditionViewController.xib; sourceTree = "<group>"; };
+		B2B003DB1A8CE634007BCFEB /* MyfoxAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyfoxAuth.h; sourceTree = "<group>"; };
+		B2B003DC1A8CE634007BCFEB /* MyfoxAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyfoxAuth.m; sourceTree = "<group>"; };
+		B2B003DD1A8CE634007BCFEB /* MyfoxHeaterAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyfoxHeaterAction.h; sourceTree = "<group>"; };
+		B2B003DE1A8CE634007BCFEB /* MyfoxHeaterAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyfoxHeaterAction.m; sourceTree = "<group>"; };
+		B2B003DF1A8CE634007BCFEB /* MyfoxShutterAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyfoxShutterAction.h; sourceTree = "<group>"; };
+		B2B003E01A8CE634007BCFEB /* MyfoxShutterAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyfoxShutterAction.m; sourceTree = "<group>"; };
 		B2CF88171A827EFE005B71E9 /* MasterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterCollectionViewCell.h; sourceTree = "<group>"; };
 		B2CF88181A827EFE005B71E9 /* MasterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterCollectionViewCell.m; sourceTree = "<group>"; };
 		B2CF881A1A82A24B005B71E9 /* DetailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCollectionViewCell.h; sourceTree = "<group>"; };
 		B2CF881B1A82A24B005B71E9 /* DetailCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCollectionViewCell.m; sourceTree = "<group>"; };
 		B2EA9DDC1A8B593400E0A7E6 /* MyfoxLightsAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyfoxLightsAction.h; sourceTree = "<group>"; };
 		B2EA9DDD1A8B593400E0A7E6 /* MyfoxLightsAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyfoxLightsAction.m; sourceTree = "<group>"; };
-		B2EA9DDF1A8B59A500E0A7E6 /* F@H_auth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "F@H_auth.h"; sourceTree = "<group>"; };
 		B2EC8E281A88C62600465C7C /* Scenario.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Scenario.h; sourceTree = "<group>"; };
 		B2EC8E291A88C62600465C7C /* Scenario.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Scenario.m; sourceTree = "<group>"; };
 		B2EC8E2F1A88D47300465C7C /* Condition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Condition.h; sourceTree = "<group>"; };
@@ -107,6 +130,7 @@
 				B22EA3131A7A422700455241 /* CoreGraphics.framework in Frameworks */,
 				B22EA3151A7A422700455241 /* UIKit.framework in Frameworks */,
 				B22EA3111A7A422700455241 /* Foundation.framework in Frameworks */,
+				4E9F822297C3D6FDA3D73FC9 /* libPods-FeelAtHome.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,17 +147,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BA3BA7735224119E1BB12EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50D5FBB21FE76C95E90D0C1C /* Pods-FeelAtHome.debug.xcconfig */,
+				208FF295391BB1302B476401 /* Pods-FeelAtHome.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B2299D571A8BE4B600DD5AE8 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				B2B003DA1A8CE5F1007BCFEB /* Myfox */,
 				B2EC8E281A88C62600465C7C /* Scenario.h */,
 				B2EC8E291A88C62600465C7C /* Scenario.m */,
 				B2EC8E2F1A88D47300465C7C /* Condition.h */,
 				B2EC8E301A88DFF300465C7C /* Action.h */,
-				B2EA9DDC1A8B593400E0A7E6 /* MyfoxLightsAction.h */,
-				B2EA9DDD1A8B593400E0A7E6 /* MyfoxLightsAction.m */,
-				B23B45451A8B72F600B36BDF /* TimeCondition.h */,
-				B23B45461A8B72F600B36BDF /* TimeCondition.m */,
+				B288A5631A8CFDD400EEED21 /* SetupViewController.h */,
+				B288A5641A8CFDD400EEED21 /* SetupViewController.m */,
 			);
 			name = Interfaces;
 			sourceTree = "<group>";
@@ -141,7 +173,6 @@
 		B2299D581A8BE4CF00DD5AE8 /* Upstream */ = {
 			isa = PBXGroup;
 			children = (
-				B2EA9DDF1A8B59A500E0A7E6 /* F@H_auth.h */,
 				B2EC8E351A88FEB600465C7C /* NSInvocation+blocks.h */,
 				B2EC8E361A88FEB600465C7C /* NSInvocation+blocks.m */,
 			);
@@ -155,6 +186,7 @@
 				B22EA33B1A7A422700455241 /* Feel@HomeTests */,
 				B22EA30F1A7A422700455241 /* Frameworks */,
 				B22EA30E1A7A422700455241 /* Products */,
+				7BA3BA7735224119E1BB12EB /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +206,7 @@
 				B22EA3121A7A422700455241 /* CoreGraphics.framework */,
 				B22EA3141A7A422700455241 /* UIKit.framework */,
 				B22EA3351A7A422700455241 /* XCTest.framework */,
+				260035BDDA7D3D41FFEF120C /* libPods-FeelAtHome.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,6 +214,8 @@
 		B22EA3161A7A422700455241 /* Feel@Home */ = {
 			isa = PBXGroup;
 			children = (
+				B288A5671A8CFFB200EEED21 /* Actions */,
+				B288A5661A8CFFA600EEED21 /* Conditions */,
 				B2299D581A8BE4CF00DD5AE8 /* Upstream */,
 				B2299D571A8BE4B600DD5AE8 /* Interfaces */,
 				B23B45421A8B72E400B36BDF /* ScenarioListViewController.h */,
@@ -242,6 +277,73 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B288A5661A8CFFA600EEED21 /* Conditions */ = {
+			isa = PBXGroup;
+			children = (
+				B288A5711A8D264100EEED21 /* TimeCondition */,
+			);
+			name = Conditions;
+			sourceTree = "<group>";
+		};
+		B288A5671A8CFFB200EEED21 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				B288A56A1A8D067E00EEED21 /* MyfoxHeater */,
+				B288A56B1A8D07EA00EEED21 /* MyfoxShutter */,
+				B288A56C1A8D07F300EEED21 /* MyfoxLights */,
+			);
+			name = Actions;
+			sourceTree = "<group>";
+		};
+		B288A56A1A8D067E00EEED21 /* MyfoxHeater */ = {
+			isa = PBXGroup;
+			children = (
+				B2B003DD1A8CE634007BCFEB /* MyfoxHeaterAction.h */,
+				B2B003DE1A8CE634007BCFEB /* MyfoxHeaterAction.m */,
+				B288A5681A8D00C100EEED21 /* MyfoxHeaterActionView.xib */,
+			);
+			name = MyfoxHeater;
+			sourceTree = "<group>";
+		};
+		B288A56B1A8D07EA00EEED21 /* MyfoxShutter */ = {
+			isa = PBXGroup;
+			children = (
+				B2B003DF1A8CE634007BCFEB /* MyfoxShutterAction.h */,
+				B2B003E01A8CE634007BCFEB /* MyfoxShutterAction.m */,
+				B288A56D1A8D225200EEED21 /* MyfoxShutterActionView.xib */,
+			);
+			name = MyfoxShutter;
+			sourceTree = "<group>";
+		};
+		B288A56C1A8D07F300EEED21 /* MyfoxLights */ = {
+			isa = PBXGroup;
+			children = (
+				B2EA9DDC1A8B593400E0A7E6 /* MyfoxLightsAction.h */,
+				B2EA9DDD1A8B593400E0A7E6 /* MyfoxLightsAction.m */,
+				B288A56F1A8D226F00EEED21 /* MyfoxLightsActionView.xib */,
+			);
+			name = MyfoxLights;
+			sourceTree = "<group>";
+		};
+		B288A5711A8D264100EEED21 /* TimeCondition */ = {
+			isa = PBXGroup;
+			children = (
+				B23B45451A8B72F600B36BDF /* TimeCondition.h */,
+				B23B45461A8B72F600B36BDF /* TimeCondition.m */,
+				B288A5721A8D265200EEED21 /* TimeConditionViewController.xib */,
+			);
+			name = TimeCondition;
+			sourceTree = "<group>";
+		};
+		B2B003DA1A8CE5F1007BCFEB /* Myfox */ = {
+			isa = PBXGroup;
+			children = (
+				B2B003DB1A8CE634007BCFEB /* MyfoxAuth.h */,
+				B2B003DC1A8CE634007BCFEB /* MyfoxAuth.m */,
+			);
+			name = Myfox;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,9 +351,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B22EA3451A7A422700455241 /* Build configuration list for PBXNativeTarget "FeelAtHome" */;
 			buildPhases = (
+				CE62FD10835AC9630D06B2CD /* Check Pods Manifest.lock */,
 				B22EA3091A7A422700455241 /* Sources */,
 				B22EA30A1A7A422700455241 /* Frameworks */,
 				B22EA30B1A7A422700455241 /* Resources */,
+				B186DCA199B2F25D7BE043FF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -322,9 +426,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B22EA3271A7A422700455241 /* Main_iPad.storyboard in Resources */,
+				B288A5701A8D226F00EEED21 /* MyfoxLightsActionView.xib in Resources */,
+				B288A5691A8D00C100EEED21 /* MyfoxHeaterActionView.xib in Resources */,
 				B22EA32F1A7A422700455241 /* Images.xcassets in Resources */,
 				B22EA3241A7A422700455241 /* Main_iPhone.storyboard in Resources */,
+				B288A5731A8D265200EEED21 /* TimeConditionViewController.xib in Resources */,
 				B22EA31B1A7A422700455241 /* InfoPlist.strings in Resources */,
+				B288A56E1A8D225200EEED21 /* MyfoxShutterActionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,17 +446,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B186DCA199B2F25D7BE043FF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FeelAtHome/Pods-FeelAtHome-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE62FD10835AC9630D06B2CD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B22EA3091A7A422700455241 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2B003E21A8CE634007BCFEB /* MyfoxHeaterAction.m in Sources */,
 				B22EA3211A7A422700455241 /* AppDelegate.m in Sources */,
 				B2EA9DDE1A8B593400E0A7E6 /* MyfoxLightsAction.m in Sources */,
 				B23B454A1A8B732300B36BDF /* ScenarioViewController.m in Sources */,
 				B23B45531A8BD1D300B36BDF /* ActionsTableViewController.m in Sources */,
+				B2B003E31A8CE634007BCFEB /* MyfoxShutterAction.m in Sources */,
 				B2EC8E2A1A88C62600465C7C /* Scenario.m in Sources */,
 				B22EA32A1A7A422700455241 /* MasterViewController.m in Sources */,
+				B288A5651A8CFDD400EEED21 /* SetupViewController.m in Sources */,
 				B23B45501A8BCE8400B36BDF /* ConditionsTableViewController.m in Sources */,
 				B22EA31D1A7A422700455241 /* main.m in Sources */,
 				B2CF881C1A82A24B005B71E9 /* DetailCollectionViewCell.m in Sources */,
@@ -358,6 +502,7 @@
 				B22EA32D1A7A422700455241 /* DetailViewController.m in Sources */,
 				B2EC8E371A88FEB600465C7C /* NSInvocation+blocks.m in Sources */,
 				B23B455C1A8BDE3A00B36BDF /* IfThenViewController.m in Sources */,
+				B2B003E11A8CE634007BCFEB /* MyfoxAuth.m in Sources */,
 				B2CF88191A827EFE005B71E9 /* MasterCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +637,7 @@
 		};
 		B22EA3461A7A422700455241 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50D5FBB21FE76C95E90D0C1C /* Pods-FeelAtHome.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -510,6 +656,7 @@
 		};
 		B22EA3471A7A422700455241 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 208FF295391BB1302B476401 /* Pods-FeelAtHome.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

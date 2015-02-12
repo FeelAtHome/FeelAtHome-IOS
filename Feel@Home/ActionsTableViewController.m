@@ -8,12 +8,17 @@
 
 #import "ActionsTableViewController.h"
 #import "MyfoxLightsAction.h"
+#import "MyfoxHeaterAction.h"
+#import "MyfoxShutterAction.h"
 
 @interface ActionsTableViewController ()
 
 @end
 
 @implementation ActionsTableViewController
+{
+    NSIndexPath *selectedIndex;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -33,16 +38,26 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.actionsClasses = @[[MyfoxLightsAction class]];
+    self.actionsClasses = @[[MyfoxLightsAction class], [MyfoxShutterAction class], [MyfoxHeaterAction class]];
     self.tableView.allowsSelection = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSIndexPath *path = [NSIndexPath indexPathForRow:[self.actionsClasses indexOfObject:self.selectedClass] inSection:0];
-    [self.tableView selectRowAtIndexPath:path animated:YES scrollPosition:UITableViewScrollPositionTop];
 
+}
+
+- (Class) selectedClass
+{
+    return self.actionsClasses[selectedIndex.row];
+}
+
+- (void) setSelectedClass:(Class)selectedClass
+{
+    NSIndexPath *path = [NSIndexPath indexPathForRow:[self.actionsClasses indexOfObject:self.selectedClass] inSection:0];
+    selectedIndex = path;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,17 +89,29 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if ([indexPath isEqual:selectedIndex])
+    {
+        NSLog(@"Selected cell %@", indexPath);
+        [cell setSelected:YES];
+    }
     cell.textLabel.text = [self.actionsClasses[indexPath.row] name];
     
     return cell;
 
 }
 
+- (void) createObj:(id)obj
+{
+    [self.delegate choseAction:obj];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // TODO : wait for segue ?
     NSLog(@"Selected action %@", indexPath);
-    [self.delegate choseAction:[[self.actionsClasses[indexPath.row] alloc] init]];
+    SetupViewController *nextView = [[self.actionsClasses[indexPath.row] setupView] init];
+    nextView.delegate = self;
+    selectedIndex = indexPath;
+    [self.navigationController pushViewController:nextView animated:YES];
 }
 
 /*

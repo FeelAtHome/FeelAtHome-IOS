@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "MasterCollectionViewCell.h"
+#import "MyfoxAuth.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -16,7 +17,9 @@
 @end
 
 @implementation MasterViewController
-
+{
+    MyfoxAuth   *auth;
+}
 - (void)awakeFromNib
 {
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -35,6 +38,18 @@
     //[self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"PwettyCell"];
 
     // TODO : Request those from myfox
+ /*   auth = [[MyfoxAuth alloc] initAuthorize:@"" withPassword:@""];
+    // TODO : no function that returns list of lights...
+    self.sitesData = @{ };
+    [auth get_request:@"shutter" withItemName:@"" withBlock:^(int deviceId, int siteId, NSError *err) {
+        if (err)
+        {
+            NSLog(@"error list_shutters : %@", err);
+            return;
+        }
+        NSLog(@"list_shutters : deviceId=%d siteId=%d", deviceId, siteId);
+//        self.sitesData[@"Shutter"] = @{@"icon": @"LightBulb", @"data": @{@"Devices": @[@""]}};
+    }];*/
     self.sitesData = @{@"Lights": @{@"icon": @"LightBulb", @"data": @{@"Switches" : @[@{@"name": @"Living Room"}]}},
                        @"Alarms": @{ @"icon": @"Alarm", @"data": @{} },
                        @"Blinds": @{ @"icon": @"Blinds", @"data": @{} },

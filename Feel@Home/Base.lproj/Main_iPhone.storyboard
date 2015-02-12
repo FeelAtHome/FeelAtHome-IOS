@@ -207,13 +207,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="316" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="t2p-wU-Cf8">
-                                            <rect key="frame" x="18" y="49" width="280" height="34"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="276" id="9w9-Sv-IMf"/>
-                                            </constraints>
-                                        </slider>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnu-vC-4z7">
                                             <rect key="frame" x="137" y="20" width="42" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -221,18 +214,24 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eas-0R-QGw">
+                                            <rect key="frame" x="134" y="55" width="51" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <connections>
+                                                <action selector="switched" destination="Awh-2P-dYM" eventType="valueChanged" id="w6y-bD-NxM"/>
+                                                <action selector="switched:" destination="atk-1a-6MZ" eventType="valueChanged" id="jbc-gy-jIW"/>
+                                            </connections>
+                                        </switch>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="centerX" secondItem="t2p-wU-Cf8" secondAttribute="centerX" id="2sR-SU-fwl"/>
                                     <constraint firstAttribute="centerX" secondItem="mnu-vC-4z7" secondAttribute="centerX" id="4Fi-Cm-14W"/>
-                                    <constraint firstItem="t2p-wU-Cf8" firstAttribute="top" secondItem="mnu-vC-4z7" secondAttribute="bottom" constant="8" id="em8-hJ-fCc"/>
                                     <constraint firstItem="mnu-vC-4z7" firstAttribute="top" secondItem="Awh-2P-dYM" secondAttribute="top" constant="20" id="wWe-wJ-0jH"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="slider" destination="t2p-wU-Cf8" id="vaj-4L-NXg"/>
                                     <outlet property="sliderName" destination="mnu-vC-4z7" id="19q-Mb-l2l"/>
+                                    <outlet property="switch" destination="eas-0R-QGw" id="6IT-p5-0H0"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -347,7 +346,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ljG-J5-hhT">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="ljG-J5-hhT">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ljG-J5-hhT" id="bFD-53-Bsq">
@@ -375,7 +374,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="HGb-HC-94L">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" id="HGb-HC-94L">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HGb-HC-94L" id="Pmt-i7-hRv">

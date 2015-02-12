@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SetupViewController.h"
 
 @protocol Action <NSCoding>
 - (void)run;
+
 + (NSString*)name;
++ (SetupViewController*)setupView;
 @end

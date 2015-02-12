@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SetupViewController.h"
 
 @protocol Condition <NSCoding>
 - (void)startWithCb: (void(^)())cb;
 - (void)stop;
+
 + (NSString*)name;
++ (SetupViewController*)setupView;
+
 @end

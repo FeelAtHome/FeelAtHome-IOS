@@ -15,7 +15,7 @@
 
 @end
 
-@interface ActionsTableViewController : UITableViewController
+@interface ActionsTableViewController : UITableViewController<SetupViewControllerDelegate>
 @property NSArray *actionsClasses;
 @property id <ActionsTableViewControllerDelegate> delegate;
 @property Class selectedClass;

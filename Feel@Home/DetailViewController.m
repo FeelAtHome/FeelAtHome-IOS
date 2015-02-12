@@ -42,6 +42,10 @@
     [self.collectionView reloadData];
 }
 
+- (IBAction)switched:(UISwitch*)sender {
+    NSLog(@"%@", sender);
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

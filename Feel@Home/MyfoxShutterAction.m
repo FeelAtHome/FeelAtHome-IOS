@@ -1,30 +1,38 @@
 //
-//  MyfoxLightsAction.m
-//  Feel@Home
+//  MyfoxShutterAction.m
+//  FeelAtHome
 //
-//  Created by Robin LAMBERTZ on 11/02/15.
-//  Copyright (c) 2015 Robin LAMBERTZ. All rights reserved.
+//  Created by Michael BARBARIN on 11/02/15.
+//  Copyright (c) 2015 Michael BARBARIN. All rights reserved.
 //
 
-#import "MyfoxLightsAction.h"
+#import "MyfoxShutterAction.h"
 #import "MyfoxAuth.h"
 
-
-@interface MyfoxLightsActionViewController : SetupViewController<UITextFieldDelegate>
+@interface MyfoxShutterActionViewController : SetupViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @end
 
-@implementation MyfoxLightsAction
+@implementation MyfoxShutterAction
 {
     MyfoxAuth *auth;
-    NSString *elecGroup;
+    NSString *shutter;
     NSString *username;
     NSString *password;
 }
 
++ (NSString*) name
+{
+    return @"Open the Shutters";
+}
+
+
 - (id) initWithDictionary: (NSDictionary*)dict
 {
-    elecGroup = dict[@"elecGroup"];
+    username = dict[@"username"];
+    password = dict[@"password"];
+    auth = [[MyfoxAuth alloc] initAuthorize:username withPassword:password];
+    shutter = dict[@"shutter"];
     return self;
 }
 
@@ -35,7 +43,7 @@
     username = [decoder decodeObjectForKey:@"username"];
     password = [decoder decodeObjectForKey:@"password"];
     auth = [[MyfoxAuth alloc] initAuthorize:username withPassword:password];
-    elecGroup = [decoder decodeObjectForKey:@"elecGroup"];
+    shutter = [decoder decodeObjectForKey:@"shutter"];
     return self;
 }
 
@@ -43,36 +51,25 @@
 {
     [encoder encodeObject:username forKey:@"username"];
     [encoder encodeObject:password forKey:@"password"];
-    [encoder encodeObject:elecGroup forKey:@"elecGroup"];
+    [encoder encodeObject:shutter forKey:@"shutter"];
 }
 
 #pragma mark - end NSCoding
 
-- (BOOL) isEqual: (NSObject*)obj
-{
-    if ([obj isKindOfClass:[MyfoxLightsAction class]])
-        return [((MyfoxLightsAction*)obj)->elecGroup isEqualToString:elecGroup];
-    else
-        return NO;
-}
-
-+ (NSString*)name {
-    return @"Turn on Lights";
-}
-
 - (void) run {
-    NSLog(@"Running Lights");
-    //[auth set_request_electric_group_new_state:elecGroup withState:1 withErrorHandler:nil];
+    NSLog(@"Running shutter");
+//    [auth set_request_shutter_new_state:shutter withState:TRUE withErrorHandler:nil];
 }
 
 + (SetupViewController*) setupView
 {
-    return [[MyfoxLightsActionViewController alloc] init];
+    return [[MyfoxShutterActionViewController alloc] init];
 }
 
 @end
 
-@implementation MyfoxLightsActionViewController
+
+@implementation MyfoxShutterActionViewController
 - (id)init {
     self = [super initWithNibName:@"MyfoxShutterActionView" bundle:nil];
     return self;
@@ -93,7 +90,7 @@
 }
 
 - (void) saveParams {
-    [self.delegate createObj:[[MyfoxLightsAction alloc] initWithDictionary:@{@"shutter": self.textField.text}]];
+    [self.delegate createObj:[[MyfoxShutterAction alloc] initWithDictionary:@{@"shutter": self.textField.text}]];
 }
 
 - (void)didReceiveMemoryWarning
