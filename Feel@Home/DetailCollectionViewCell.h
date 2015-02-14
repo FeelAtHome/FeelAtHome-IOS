@@ -9,13 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailCollectionViewCell : UICollectionViewCell
+@end
+
+
+@protocol DetailCollectionViewCellDelegate <NSObject>
+- (void)light: (DetailCollectionViewCell*)cell toggle: (BOOL)on;
+@end
+
+@interface DetailCollectionViewCell ()
+
 @property (nonatomic, strong) IBOutlet UILabel *sliderName;
+@property (weak, nonatomic) IBOutlet UISwitch *switchButton;
+@property id <DetailCollectionViewCellDelegate> delegate;
 
 @end
-
-@protocol DetailCollectionViewCellProtocol <NSObject>
-
-- (void)lightsSwitched: (DetailCollectionViewCell*)cell;
-
-@end
-

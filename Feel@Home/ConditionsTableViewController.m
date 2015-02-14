@@ -8,6 +8,7 @@
 
 #import "ConditionsTableViewController.h"
 #import "TimeCondition.h"
+#import "navitiaCondition.h"
 
 @interface ConditionsTableViewController ()
 
@@ -35,7 +36,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     // TODO (maybe) : Find all implementations of a class
     // for now, static array
-    self.conditionsClasses = @[[TimeCondition class]];
+    self.conditionsClasses = @[[TimeCondition class], [navitiaCondition class]];
     self.tableView.allowsSelection = YES;
 }
 
@@ -90,8 +91,13 @@
     // TODO : wait for segue ?
     NSLog(@"Selected condition");
     SetupViewController *nextView = [[self.conditionsClasses[indexPath.row] setupView] init];
-    nextView.delegate = self;
-    [self.navigationController pushViewController:nextView animated:YES];
+    if (nextView)
+    {
+        nextView.delegate = self;
+        [self.navigationController pushViewController:nextView animated:YES];
+    }
+    else
+        [self.delegate choseCondition:[[self.conditionsClasses[indexPath.row] alloc] init]];
 }
 
 /*

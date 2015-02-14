@@ -21,7 +21,7 @@
     [super viewDidLoad];
     saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveClicked)];
     self.canSave = NO;
-    self.navigationItem.leftBarButtonItem = saveBtn;
+    self.navigationItem.rightBarButtonItem = saveBtn;
 	// Do any additional setup after loading the view.
 }
 

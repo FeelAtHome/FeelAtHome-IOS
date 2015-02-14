@@ -45,8 +45,6 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)text
 {
-    NSLog(@"replacementText: %@", text);
-    NSLog(@"range: { len: %u, loc: %u }", range.length, range.location);
     if ([text isEqualToString:@""] && range.location == 0 && range.length >= [textField.text length])
         saveButton.enabled = NO;
     else

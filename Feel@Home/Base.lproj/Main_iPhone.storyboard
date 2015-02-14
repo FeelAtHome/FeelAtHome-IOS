@@ -103,7 +103,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Hxb-35-7QN" detailTextLabel="buY-bd-HHA" style="IBUITableViewCellStyleSubtitle" id="ZDC-f5-XcD">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="Hxb-35-7QN" style="IBUITableViewCellStyleDefault" id="ZDC-f5-XcD">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZDC-f5-XcD" id="kml-6I-wsw">
@@ -111,16 +111,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hxb-35-7QN">
-                                            <rect key="frame" x="15" y="3" width="34" height="22"/>
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="buY-bd-HHA">
-                                            <rect key="frame" x="15" y="25" width="32" height="15"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -215,11 +208,10 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eas-0R-QGw">
-                                            <rect key="frame" x="134" y="55" width="51" height="31"/>
+                                            <rect key="frame" x="134" y="54" width="51" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>
-                                                <action selector="switched" destination="Awh-2P-dYM" eventType="valueChanged" id="w6y-bD-NxM"/>
-                                                <action selector="switched:" destination="atk-1a-6MZ" eventType="valueChanged" id="jbc-gy-jIW"/>
+                                                <action selector="lightsSwitched" destination="Awh-2P-dYM" eventType="valueChanged" id="qr6-uK-NqH"/>
                                             </connections>
                                         </switch>
                                     </subviews>
@@ -231,7 +223,7 @@
                                 </constraints>
                                 <connections>
                                     <outlet property="sliderName" destination="mnu-vC-4z7" id="19q-Mb-l2l"/>
-                                    <outlet property="switch" destination="eas-0R-QGw" id="6IT-p5-0H0"/>
+                                    <outlet property="switchButton" destination="eas-0R-QGw" id="lLR-aX-ra2"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>

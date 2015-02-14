@@ -10,6 +10,9 @@
 #import "DetailViewController.h"
 #import "MasterCollectionViewCell.h"
 #import "MyfoxAuth.h"
+#import "NXOauth2Constants.h"
+#import <PebbleKit/PebbleKit.h>
+#import "Pebble.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -19,6 +22,8 @@
 @implementation MasterViewController
 {
     MyfoxAuth   *auth;
+    Pebble      *pebble;
+    NSData      *pebbleAppUUID;
 }
 - (void)awakeFromNib
 {
@@ -32,33 +37,63 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSUUID *nsuuid = [[NSUUID alloc] initWithUUIDString:@"36f9150f-83f1-4eee-8547-864bd16bec87"];
+    uuid_t uuid;
+    [nsuuid getUUIDBytes:uuid];
+    pebbleAppUUID = [NSData dataWithBytes:uuid length:16];
 	// Do any additional setup after loading the view, typically from a nib.
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     //[self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"PwettyCell"];
 
     // TODO : Request those from myfox
- /*   auth = [[MyfoxAuth alloc] initAuthorize:@"" withPassword:@""];
+    auth = [[MyfoxAuth alloc] initAuthorize:@"mbarbari@student.42.fr" withPassword:@"140488"];
     // TODO : no function that returns list of lights...
-    self.sitesData = @{ };
-    [auth get_request:@"shutter" withItemName:@"" withBlock:^(int deviceId, int siteId, NSError *err) {
+    self.sitesData = [[NSMutableDictionary alloc] init];
+    [auth list_devices:@"shutter" withBlock:^(NSArray *arr, NSError *err) {
+        self.sitesData[@"Blinds"] = @{@"icon" : @"Blinds", @"data": @{@"Switches": [[NSMutableArray alloc] init]}};
+        [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [self.sitesData[@"Blinds"][@"data"][@"Switches"] addObject:@{@"name": obj[@"label"], @"id": obj[@"deviceId"]}];
+        }];
+        self.sites = [[self.sitesData keyEnumerator] allObjects];
+        [self.collectionView reloadData];
+    }];
+    [auth list_devices:@"heater" withBlock:^(NSArray *arr, NSError *err) {
         if (err)
         {
-            NSLog(@"error list_shutters : %@", err);
+            NSLog(@"You got mail 2 ! : %@", err);
             return;
         }
-        NSLog(@"list_shutters : deviceId=%d siteId=%d", deviceId, siteId);
-//        self.sitesData[@"Shutter"] = @{@"icon": @"LightBulb", @"data": @{@"Devices": @[@""]}};
-    }];*/
-    self.sitesData = @{@"Lights": @{@"icon": @"LightBulb", @"data": @{@"Switches" : @[@{@"name": @"Living Room"}]}},
+        self.sitesData[@"Heater"] = @{@"icon" : @"Heater", @"data": @{@"Switches": [[NSMutableArray alloc] init]}};
+        [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [self.sitesData[@"Heater"][@"data"][@"Switches"] addObject:@{@"name": obj[@"label"], @"id": obj[@"deviceId"]}];
+        }];
+        self.sites = [[self.sitesData keyEnumerator] allObjects];
+        [self.collectionView reloadData];
+    }];
+    [auth list_devices:@"electric" withBlock:^(NSArray *arr, NSError *err) {
+        if (err)
+        {
+            NSLog(@"You got mail 2 ! : %@", err);
+            return;
+        }
+        self.sitesData[@"Lights"] = @{@"icon" : @"LightBulb", @"data": @{@"Switches": [[NSMutableArray alloc] init]}};
+        [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [self.sitesData[@"Lights"][@"data"][@"Switches"] addObject:@{@"name": obj[@"label"], @"id": obj[@"groupId"]}];
+        }];
+        self.sites = [[self.sitesData keyEnumerator] allObjects];
+        [self.collectionView reloadData];
+    }];
+
+    [self startPebbleCommunication];
+/*    self.sitesData = @{@"Lights": @{@"icon": @"LightBulb", @"data": @{@"Switches" : @[@{@"name": @"Living Room"}]}},
                        @"Alarms": @{ @"icon": @"Alarm", @"data": @{} },
                        @"Blinds": @{ @"icon": @"Blinds", @"data": @{} },
                        @"Door": @{ @"icon": @"Door", @"data": @{} },
                        @"Electric": @{ @"icon": @"Electric", @"data": @{} },
                        @"Music": @{ @"icon": @"Music", @"data": @{} },
                        @"Heater": @{ @"icon": @"Heater", @"data": @{} }
-    };
-    self.sites = [[self.sitesData keyEnumerator] allObjects];
+    };*/
 
     // TODO : Loading and setting up of the tasks should happen in AppDelegate
     // self.scenarios = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"scenarios"];
@@ -69,6 +104,27 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Pebble Coms
+
+- (void)startPebbleCommunication
+{
+    PBWatch *watch = [[PBPebbleCentral defaultCentral] lastConnectedWatch];
+    [watch appMessagesAddReceiveUpdateHandler:^BOOL(PBWatch *watch, NSDictionary *update) {
+        NSLog(@"%@", update);
+        if (update[@0] == 0)
+        {
+            [self.sites enumerateObjectsUsingBlock:^(id obj, NSUInteger key, BOOL *stop) {
+                [pebble sendData:@{
+                    @0: [NSNumber numberWithUint8:1],
+                    @1: [NSNumber numberWithUint32:key],
+                    @2: obj
+                }];
+            }];
+        }
+        return YES;
+    } withUUID:pebbleAppUUID];
 }
 
 #pragma mark - UICollectionViewDataSource

@@ -42,8 +42,17 @@
     [self.collectionView reloadData];
 }
 
-- (IBAction)switched:(UISwitch*)sender {
-    NSLog(@"%@", sender);
+- (void)light:(DetailCollectionViewCell *)cell toggle:(BOOL)on
+{
+    NSLog(@"%@", cell);
+    NSUInteger item = [self.collectionView indexPathForCell:cell].row;
+    __block NSUInteger itemId = 0;
+    [self.detailItem[@"value"][@"Switches"] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if ([obj[@"deviceId"] intValue] == item)
+            itemId = item;
+    }];
+    
+// Switch off item    self.detailItem[item];
 }
 
 - (void)viewDidLoad

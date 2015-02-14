@@ -10,7 +10,8 @@
 #import "MyfoxLightsAction.h"
 #import "MyfoxHeaterAction.h"
 #import "MyfoxShutterAction.h"
-
+#import "DebugAction.h"
+#import "deezerAction.h"
 @interface ActionsTableViewController ()
 
 @end
@@ -38,7 +39,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.actionsClasses = @[[MyfoxLightsAction class], [MyfoxShutterAction class], [MyfoxHeaterAction class]];
+    // TODO : loop over all loaded obj-c runtime classes, and import those who implement Action protocol.
+    self.actionsClasses = @[[MyfoxLightsAction class], [MyfoxShutterAction class], [MyfoxHeaterAction class], [DebugAction class], [deezerAction class]];
     self.tableView.allowsSelection = YES;
 }
 
@@ -46,18 +48,6 @@
 {
     [super viewWillAppear:animated];
 
-}
-
-- (Class) selectedClass
-{
-    return self.actionsClasses[selectedIndex.row];
-}
-
-- (void) setSelectedClass:(Class)selectedClass
-{
-    NSIndexPath *path = [NSIndexPath indexPathForRow:[self.actionsClasses indexOfObject:self.selectedClass] inSection:0];
-    selectedIndex = path;
-    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -108,10 +98,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"Selected action %@", indexPath);
-    SetupViewController *nextView = [[self.actionsClasses[indexPath.row] setupView] init];
-    nextView.delegate = self;
+    SetupViewController *nextView = [self.actionsClasses[indexPath.row] setupView];
+    if (nextView != nil)
+    {
+        nextView.delegate = self;
+        [self.navigationController pushViewController:nextView animated:YES];
+    }
+    else
+        [self.delegate choseAction:[[self.actionsClasses[indexPath.row] alloc] init]];
     selectedIndex = indexPath;
-    [self.navigationController pushViewController:nextView animated:YES];
 }
 
 /*

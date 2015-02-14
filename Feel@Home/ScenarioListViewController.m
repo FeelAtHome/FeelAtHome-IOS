@@ -28,16 +28,10 @@
 {
     NSLog(@"indexPath : %@", [self.tableView indexPathForSelectedRow]);
     if (![self.tableView indexPathForSelectedRow])
-        [self.scenarios addObject:scenario];
-    NSLog(@"Saving to %@", self.scenariosFileName);
-    [NSKeyedArchiver archiveRootObject:self.scenarios toFile:self.scenariosFileName];
+        [Scenario addScenario:scenario];
+    [scenario enable];
+    [Scenario saveInstance];
     [self.tableView reloadData];
-    // TODO : save the damn thing
-}
-
-- (void)writeScenarios
-{
-    
 }
 
 - (void)viewDidLoad
@@ -50,9 +44,6 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.scenarios = [NSKeyedUnarchiver unarchiveObjectWithFile:self.scenariosFileName];
-    if (self.scenarios == nil)
-        self.scenarios = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -76,7 +67,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.scenarios count];
+    return [[Scenario sharedInstance] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -85,7 +76,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
-    cell.textLabel.text = [[self.scenarios objectAtIndex:indexPath.row] title];
+    cell.textLabel.text = [[[Scenario sharedInstance] objectAtIndex:indexPath.row] title];
     
     return cell;
 }
@@ -99,13 +90,6 @@
 }
 */
 
-- (NSString*)scenariosFileName
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    return [documentsDirectory stringByAppendingPathComponent:@"scenarios.dat"];
-}
-
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated
 {
     [super setEditing:editing animated:animated];
@@ -114,9 +98,6 @@
     else
     {
         [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-        /*[self.scenarios enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [obj enable];
-        }];*/
     }
 }
 
@@ -126,9 +107,8 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         @try {
-            [self.scenarios removeObjectAtIndex:indexPath.row];
-            NSLog(@"Saving to %@", self.scenariosFileName);
-            [NSKeyedArchiver archiveRootObject:self.scenarios toFile:self.scenariosFileName];
+            [Scenario removeScenarioAtIndex:indexPath.row];
+            [Scenario saveInstance];
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         } @catch (NSException *e) {
             
@@ -165,7 +145,10 @@
     {
         Scenario *scenario;
         if (sender)
-            scenario = self.scenarios[[self.tableView indexPathForCell:sender].row];
+        {
+            scenario = [Scenario sharedInstance][[self.tableView indexPathForCell:sender].row];
+            [scenario disable];
+        }
         else
             scenario = [[Scenario alloc] init];
         [segue.destinationViewController setScenario:scenario];

@@ -11,20 +11,25 @@
 
 
 @interface MyfoxLightsActionViewController : SetupViewController<UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *lightsField;
 @end
 
 @implementation MyfoxLightsAction
 {
     MyfoxAuth *auth;
-    NSString *elecGroup;
+    NSInteger elecGroup;
     NSString *username;
     NSString *password;
 }
 
 - (id) initWithDictionary: (NSDictionary*)dict
 {
-    elecGroup = dict[@"elecGroup"];
+    username = dict[@"username"];
+    password = dict[@"password"];
+    auth = [[MyfoxAuth alloc] initAuthorize:username withPassword:password];
+    elecGroup = dict[@"lights"];
     return self;
 }
 
@@ -35,7 +40,7 @@
     username = [decoder decodeObjectForKey:@"username"];
     password = [decoder decodeObjectForKey:@"password"];
     auth = [[MyfoxAuth alloc] initAuthorize:username withPassword:password];
-    elecGroup = [decoder decodeObjectForKey:@"elecGroup"];
+    elecGroup = [decoder decodeIntegerForKey:@"elecGroup"];
     return self;
 }
 
@@ -43,26 +48,17 @@
 {
     [encoder encodeObject:username forKey:@"username"];
     [encoder encodeObject:password forKey:@"password"];
-    [encoder encodeObject:elecGroup forKey:@"elecGroup"];
+    [encoder encodeInteger:elecGroup forKey:@"elecGroup"];
 }
 
 #pragma mark - end NSCoding
-
-- (BOOL) isEqual: (NSObject*)obj
-{
-    if ([obj isKindOfClass:[MyfoxLightsAction class]])
-        return [((MyfoxLightsAction*)obj)->elecGroup isEqualToString:elecGroup];
-    else
-        return NO;
-}
 
 + (NSString*)name {
     return @"Turn on Lights";
 }
 
 - (void) run {
-    NSLog(@"Running Lights");
-    //[auth set_request_electric_group_new_state:elecGroup withState:1 withErrorHandler:nil];
+    [auth set_request_electric_group_new_state:elecGroup withState:1 withErrorHandler:nil];
 }
 
 + (SetupViewController*) setupView
@@ -73,14 +69,20 @@
 @end
 
 @implementation MyfoxLightsActionViewController
-- (id)init {
-    self = [super initWithNibName:@"MyfoxShutterActionView" bundle:nil];
+- (id)init
+{
+    self = [super initWithNibName:@"MyfoxLightsActionView" bundle:nil];
     return self;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [self.textField resignFirstResponder];
+    if (textField == self.usernameField)
+        [self.passwordField becomeFirstResponder];
+    else if (textField == self.passwordField)
+        [self.lightsField becomeFirstResponder];
+    else
+        [textField resignFirstResponder];
     return YES;
 }
 
@@ -93,7 +95,11 @@
 }
 
 - (void) saveParams {
-    [self.delegate createObj:[[MyfoxLightsAction alloc] initWithDictionary:@{@"shutter": self.textField.text}]];
+    [self.delegate createObj:[[MyfoxLightsAction alloc] initWithDictionary:@{
+        @"username": self.usernameField.text,
+        @"password": self.passwordField.text,
+        @"lights": self.lightsField.text
+    }]];
 }
 
 - (void)didReceiveMemoryWarning

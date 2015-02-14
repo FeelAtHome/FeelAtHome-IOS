@@ -12,7 +12,6 @@
 
 @interface MasterViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-//@property (strong, nonatomic) DetailViewController      *detailViewController;
 @property NSArray                   *sites;
-@property NSDictionary              *sitesData;
+@property NSMutableDictionary              *sitesData;
 @end

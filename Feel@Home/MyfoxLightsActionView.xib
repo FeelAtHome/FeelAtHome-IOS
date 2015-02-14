@@ -6,7 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyfoxLightsActionViewController">
             <connections>
-                <outlet property="textField" destination="f6Z-ky-LFI" id="IGB-PV-UPe"/>
+                <outlet property="lightsField" destination="f6Z-ky-LFI" id="agE-8e-G8V"/>
+                <outlet property="passwordField" destination="fdO-Lo-7Bm" id="2rx-rS-4pv"/>
+                <outlet property="usernameField" destination="flb-Rb-Z5x" id="rTa-xe-DNP"/>
+                <outlet property="view" destination="1" id="WV5-Kk-vFr"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -15,19 +18,47 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert Group" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f6Z-ky-LFI">
-                    <rect key="frame" x="20" y="269" width="280" height="30"/>
+                    <rect key="frame" x="20" y="160" width="280" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="mAx-y9-a8D"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="flb-Rb-Z5x">
+                    <rect key="frame" x="20" y="84" width="280" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="5fA-go-CH4"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fdO-Lo-7Bm">
+                    <rect key="frame" x="20" y="122" width="280" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="kE6-5q-X3a"/>
+                    </connections>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="f6Z-ky-LFI" secondAttribute="trailing" constant="20" id="0iW-0h-5eJ"/>
+                <constraint firstItem="flb-Rb-Z5x" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="8oG-8S-sgl"/>
+                <constraint firstAttribute="trailing" secondItem="flb-Rb-Z5x" secondAttribute="trailing" constant="20" id="Ftu-57-rJ2"/>
+                <constraint firstItem="flb-Rb-Z5x" firstAttribute="top" secondItem="1" secondAttribute="top" constant="84" id="Rve-ub-3R8"/>
+                <constraint firstItem="fdO-Lo-7Bm" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="Yjc-CF-sgV"/>
+                <constraint firstItem="f6Z-ky-LFI" firstAttribute="top" secondItem="fdO-Lo-7Bm" secondAttribute="bottom" constant="8" id="Zzc-Bn-eU8"/>
                 <constraint firstItem="f6Z-ky-LFI" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="e97-Ih-tX5"/>
-                <constraint firstAttribute="centerY" secondItem="f6Z-ky-LFI" secondAttribute="centerY" id="tKw-aO-pHw"/>
+                <constraint firstAttribute="trailing" secondItem="fdO-Lo-7Bm" secondAttribute="trailing" constant="20" id="n07-xx-mfr"/>
+                <constraint firstItem="fdO-Lo-7Bm" firstAttribute="top" secondItem="flb-Rb-Z5x" secondAttribute="bottom" constant="8" id="v5j-xG-ldH"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

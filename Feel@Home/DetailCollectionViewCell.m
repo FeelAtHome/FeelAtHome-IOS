@@ -19,8 +19,8 @@
     return self;
 }
 
-- (IBAction)switched {
-
+- (IBAction)lightsSwitched {
+    [self.delegate light:self toggle:self.switchButton.on];
 }
 
 /*

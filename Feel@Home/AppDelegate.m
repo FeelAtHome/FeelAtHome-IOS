@@ -24,8 +24,6 @@
     if (lastRead == nil)     // App first run: set up user defaults.
     {
         NSArray *defaultScenarios = @[[[Scenario alloc] initWithConditions:@[] forActions:@[]]]; // TODO : Create default scenarios
-        NSDictionary *appDefaults  = [NSDictionary dictionaryWithObjects:@[[NSDate date], defaultScenarios] forKeys: @[dateKey, @"scenarios"]];
-
         // do any other initialization you want to do here - e.g. the starting default values.
         // [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"should_play_sounds"];
         

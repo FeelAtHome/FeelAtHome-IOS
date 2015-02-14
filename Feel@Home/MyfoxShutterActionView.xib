@@ -6,7 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyfoxShutterActionViewController">
             <connections>
-                <outlet property="textField" destination="fFD-cs-x37" id="9VM-Pk-CTu"/>
+                <outlet property="passwordField" destination="W5R-od-iJX" id="Fgt-jU-Pwc"/>
+                <outlet property="shutterField" destination="fFD-cs-x37" id="bB7-YM-WTh"/>
+                <outlet property="usernameField" destination="evm-jm-a0I" id="Xtm-By-GPK"/>
                 <outlet property="view" destination="1" id="GZA-PA-b2c"/>
             </connections>
         </placeholder>
@@ -16,19 +18,49 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insert Group" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFD-cs-x37">
-                    <rect key="frame" x="20" y="269" width="280" height="30"/>
+                    <rect key="frame" x="20" y="161" width="280" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="dAh-gl-vfb"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="evm-jm-a0I">
+                    <rect key="frame" x="20" y="85" width="280" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="TDi-iE-lGB"/>
+                    </connections>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W5R-od-iJX">
+                    <rect key="frame" x="20" y="123" width="280" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="Tut-et-0jl"/>
+                    </connections>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerY" secondItem="fFD-cs-x37" secondAttribute="centerY" id="VxW-V7-9Hu"/>
+                <constraint firstItem="fFD-cs-x37" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1" secondAttribute="leading" constant="20" id="1JP-ev-pxP"/>
+                <constraint firstItem="fFD-cs-x37" firstAttribute="top" secondItem="W5R-od-iJX" secondAttribute="bottom" constant="8" id="KZJ-hB-czw"/>
+                <constraint firstItem="W5R-od-iJX" firstAttribute="top" secondItem="evm-jm-a0I" secondAttribute="bottom" constant="8" id="YYT-fl-VVT"/>
                 <constraint firstItem="fFD-cs-x37" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="cBT-JV-hc0"/>
+                <constraint firstItem="W5R-od-iJX" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="cjh-y2-OmM"/>
+                <constraint firstAttribute="trailing" secondItem="W5R-od-iJX" secondAttribute="trailing" constant="20" id="e9K-sA-2Kt"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fFD-cs-x37" secondAttribute="trailing" constant="20" id="ihp-H0-onG"/>
+                <constraint firstItem="evm-jm-a0I" firstAttribute="top" secondItem="1" secondAttribute="top" constant="85" id="nPu-Dh-vTv"/>
+                <constraint firstAttribute="trailing" secondItem="evm-jm-a0I" secondAttribute="trailing" constant="20" id="us5-i1-6kg"/>
+                <constraint firstItem="evm-jm-a0I" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="vC0-es-6k4"/>
                 <constraint firstAttribute="trailing" secondItem="fFD-cs-x37" secondAttribute="trailing" constant="20" id="yKw-cf-8Cg"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

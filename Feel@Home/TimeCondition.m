@@ -7,7 +7,7 @@
 //
 
 #import "TimeCondition.h"
-#import "NSInvocation+blocks.h"
+#import "NSTimer+Blocks.h"
 
 @interface TimeConditionViewController : SetupViewController
 @property (weak, nonatomic) IBOutlet UIDatePicker *timeField;
@@ -59,22 +59,28 @@
 {
     if ([next timeIntervalSinceNow] < 0)
         [self nextDate];
-    nextNotif = [NSTimer timerWithTimeInterval:[next timeIntervalSinceNow] invocation:[NSInvocation jr_invocationWithTarget:nil block:^(id stuff) {
+    nextNotif = [NSTimer scheduledTimerWithTimeInterval:[next timeIntervalSinceNow] block:^{
         cb();
-        [self nextDate];
-        [self startWithCb: cb];
-    }] repeats:NO];
+        // [self nextDate]; // Theorically unneeded
+        [self startWithCb:cb];
+    } repeats:NO];
 }
 
 - (void)stop {
+    NSLog(@"Stopping timer");
     [nextNotif invalidate];
+}
+
+-(void)dealloc {
+    NSLog(@"TimeCondition deallocating");
 }
 
 - (void) nextDate {
     NSDateComponents* deltaComps = [[NSDateComponents alloc] init];
     [deltaComps setDay:1];
 
-    while ([next timeIntervalSinceNow] < 0)
+    NSDate *now = [NSDate date];
+    while ([next compare:now] == NSOrderedAscending)
         next = [[NSCalendar currentCalendar] dateByAddingComponents:deltaComps toDate:next options:0];
 }
 
@@ -94,7 +100,7 @@
 {
     [super viewDidLoad];
     self.canSave = YES;
-    self.title = @"Myfox Shutter Configuration";
+    self.title = @"Timer Configuration";
 	// Do any additional setup after loading the view.
 }
 

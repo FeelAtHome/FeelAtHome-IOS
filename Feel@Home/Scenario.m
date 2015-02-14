@@ -10,6 +10,44 @@
 
 @implementation Scenario
 
++ (NSString*)scenariosFileName
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    return [documentsDirectory stringByAppendingPathComponent:@"scenarios.dat"];
+}
+
++ (NSMutableArray*) instance
+{
+    static NSMutableArray *arr;
+    
+    if (arr == nil)
+        arr = [NSKeyedUnarchiver unarchiveObjectWithFile:self.scenariosFileName];
+    if (arr == nil)
+        arr = [[NSMutableArray alloc] init];
+    return arr;
+}
+
++ (NSArray*) sharedInstance
+{
+    return [self instance];
+}
+
++ (void) saveInstance
+{
+    [NSKeyedArchiver archiveRootObject:[self sharedInstance] toFile:self.scenariosFileName];
+}
+
++ (void) addScenario:(Scenario *)scenario
+{
+    [[self instance] addObject:scenario];
+}
+
++ (void) removeScenarioAtIndex:(NSUInteger)uint
+{
+    [[self instance] removeObjectAtIndex:uint];
+}
+
 #pragma mark - NSCoding
 - (id) initWithCoder:(NSCoder *)decoder {
     self.title = [decoder decodeObjectForKey:@"title"];

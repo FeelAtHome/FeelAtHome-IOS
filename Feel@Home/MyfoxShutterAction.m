@@ -10,7 +10,9 @@
 #import "MyfoxAuth.h"
 
 @interface MyfoxShutterActionViewController : SetupViewController<UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *shutterField;
 @end
 
 @implementation MyfoxShutterAction
@@ -58,7 +60,9 @@
 
 - (void) run {
     NSLog(@"Running shutter");
-//    [auth set_request_shutter_new_state:shutter withState:TRUE withErrorHandler:nil];
+    [auth set_request_shutter_new_state:[shutter intValue] withState:true withErrorHandler:^(NSError *err) {
+        NSLog(@"You got mail ! : %@", err);
+    }];
 }
 
 + (SetupViewController*) setupView
@@ -77,7 +81,12 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [self.textField resignFirstResponder];
+    if (textField == self.usernameField)
+        [self.passwordField becomeFirstResponder];
+    else if (textField == self.passwordField)
+        [self.shutterField becomeFirstResponder];
+    else
+        [textField resignFirstResponder];
     return YES;
 }
 
@@ -90,7 +99,11 @@
 }
 
 - (void) saveParams {
-    [self.delegate createObj:[[MyfoxShutterAction alloc] initWithDictionary:@{@"shutter": self.textField.text}]];
+    [self.delegate createObj:[[MyfoxShutterAction alloc] initWithDictionary:@{
+        @"username": self.usernameField.text,
+        @"password": self.passwordField.text,
+        @"shutter": self.shutterField.text
+    }]];
 }
 
 - (void)didReceiveMemoryWarning

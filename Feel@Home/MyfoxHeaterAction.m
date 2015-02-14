@@ -10,7 +10,9 @@
 #import "MyfoxAuth.h"
 
 @interface MyfoxHeaterActionViewController : SetupViewController<UITextFieldDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (weak, nonatomic) IBOutlet UITextField *usernameField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *heaterField;
 @end
 
 @implementation MyfoxHeaterAction
@@ -28,9 +30,10 @@
 
 - (id) initWithDictionary:(NSDictionary *)dict
 {
-    heater = dict[@"heater"];
     username = dict[@"username"];
     password = dict[@"password"];
+    auth = [[MyfoxAuth alloc] initAuthorize:username withPassword:password];
+    heater = dict[@"heater"];
     return self;
 }
 
@@ -73,7 +76,12 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [self.textField resignFirstResponder];
+    if (textField == self.usernameField)
+        [self.passwordField becomeFirstResponder];
+    else if (textField == self.passwordField)
+        [self.heaterField becomeFirstResponder];
+    else
+        [textField resignFirstResponder];
     return YES;
 }
 
@@ -86,7 +94,11 @@
 }
 
 - (void) saveParams {
-    [self.delegate createObj:[[MyfoxHeaterAction alloc] initWithDictionary:@{@"heater": self.textField.text}]];
+    [self.delegate createObj:[[MyfoxHeaterAction alloc] initWithDictionary:@{
+        @"username": self.usernameField.text,
+        @"password": self.passwordField.text,
+        @"heater": self.heaterField.text
+    }]];
 }
 
 - (void)didReceiveMemoryWarning

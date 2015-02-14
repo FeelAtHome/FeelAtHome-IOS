@@ -11,5 +11,4 @@
 
 @interface ScenarioListViewController : UITableViewController<ScenarioViewControllerDelegate>
 @property UIBarButtonItem       *addButton;
-@property NSMutableArray        *scenarios;
 @end

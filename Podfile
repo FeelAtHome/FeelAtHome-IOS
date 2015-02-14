@@ -3,6 +3,8 @@
 
 target 'FeelAtHome' do
 	pod 'NXOAuth2Client', '~> 1.2.8'
+	pod 'LRResty', '~> 0.11.0'
+	pod 'PebbleKit', '~> 2.4'
 end
 
 target 'FeelAtHomeTests' do

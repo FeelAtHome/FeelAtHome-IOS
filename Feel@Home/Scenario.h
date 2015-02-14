@@ -14,7 +14,10 @@
 @property NSString          *title;
 @property NSMutableArray    *steps;
 @property BOOL              enabled;
-
++ (NSArray*) sharedInstance;
++ (void) saveInstance;
++ (void) addScenario: (Scenario*)scenario;
++ (void) removeScenarioAtIndex: (NSUInteger) uint;
 - (Scenario*) initWithConditions: (NSArray*)conds forActions: (NSArray*) actions;
 - (void) when: (NSObject<Condition>*)cond then: (NSObject<Action>*)action;
 - (void) enable;

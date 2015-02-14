@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4E9F822297C3D6FDA3D73FC9 /* libPods-FeelAtHome.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 260035BDDA7D3D41FFEF120C /* libPods-FeelAtHome.a */; };
+		B21FEA8F1A8E21F9007C1B22 /* MyfoxAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FEA8E1A8E21F9007C1B22 /* MyfoxAuth.m */; };
+		B21FEA921A8E2857007C1B22 /* DebugAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FEA911A8E2857007C1B22 /* DebugAction.m */; };
+		B21FEA961A8E46C2007C1B22 /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FEA951A8E46C2007C1B22 /* NSTimer+Blocks.m */; };
 		B22EA3111A7A422700455241 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22EA3101A7A422700455241 /* Foundation.framework */; };
 		B22EA3131A7A422700455241 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22EA3121A7A422700455241 /* CoreGraphics.framework */; };
 		B22EA3151A7A422700455241 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22EA3141A7A422700455241 /* UIKit.framework */; };
@@ -36,14 +39,30 @@
 		B288A56E1A8D225200EEED21 /* MyfoxShutterActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B288A56D1A8D225200EEED21 /* MyfoxShutterActionView.xib */; };
 		B288A5701A8D226F00EEED21 /* MyfoxLightsActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B288A56F1A8D226F00EEED21 /* MyfoxLightsActionView.xib */; };
 		B288A5731A8D265200EEED21 /* TimeConditionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B288A5721A8D265200EEED21 /* TimeConditionViewController.xib */; };
-		B2B003E11A8CE634007BCFEB /* MyfoxAuth.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B003DC1A8CE634007BCFEB /* MyfoxAuth.m */; };
 		B2B003E21A8CE634007BCFEB /* MyfoxHeaterAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B003DE1A8CE634007BCFEB /* MyfoxHeaterAction.m */; };
 		B2B003E31A8CE634007BCFEB /* MyfoxShutterAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B003E01A8CE634007BCFEB /* MyfoxShutterAction.m */; };
+		B2B45ECD1A8F805E00EB4028 /* NotificationAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B45ECC1A8F805E00EB4028 /* NotificationAction.m */; };
+		B2B45ED01A8F85FB00EB4028 /* NotificationActionSetupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B45ECF1A8F85FB00EB4028 /* NotificationActionSetupView.xib */; };
+		B2B45ED31A8FA8BE00EB4028 /* Pebble.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B45ED21A8FA8BE00EB4028 /* Pebble.m */; };
+		B2B45ED61A8FA92000EB4028 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B45ED51A8FA92000EB4028 /* NSMutableArray+QueueAdditions.m */; };
 		B2CF88191A827EFE005B71E9 /* MasterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CF88181A827EFE005B71E9 /* MasterCollectionViewCell.m */; };
 		B2CF881C1A82A24B005B71E9 /* DetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CF881B1A82A24B005B71E9 /* DetailCollectionViewCell.m */; };
 		B2EA9DDE1A8B593400E0A7E6 /* MyfoxLightsAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EA9DDD1A8B593400E0A7E6 /* MyfoxLightsAction.m */; };
 		B2EC8E2A1A88C62600465C7C /* Scenario.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC8E291A88C62600465C7C /* Scenario.m */; };
 		B2EC8E371A88FEB600465C7C /* NSInvocation+blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EC8E361A88FEB600465C7C /* NSInvocation+blocks.m */; };
+		B2F508C11A8F75690083F5A5 /* deezerAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F508BF1A8F75690083F5A5 /* deezerAction.m */; };
+		B2F508C21A8F75690083F5A5 /* deezerActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F508C01A8F75690083F5A5 /* deezerActionView.xib */; };
+		B2F508E31A8F76C30083F5A5 /* DZRResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B2F508C51A8F76C30083F5A5 /* DZRResources.bundle */; };
+		B2F508E41A8F76C30083F5A5 /* libDeezer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F508E21A8F76C30083F5A5 /* libDeezer.a */; };
+		B2F508E61A8F76E40083F5A5 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F508E51A8F76E40083F5A5 /* MediaPlayer.framework */; };
+		B2F508E91A8F76FE0083F5A5 /* Deezer.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F508E81A8F76FE0083F5A5 /* Deezer.m */; };
+		B2F508EB1A8F772C0083F5A5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F508EA1A8F772C0083F5A5 /* AudioToolbox.framework */; };
+		B2F508ED1A8F77340083F5A5 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F508EC1A8F77330083F5A5 /* CoreAudio.framework */; };
+		B2F508EF1A8F773B0083F5A5 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F508EE1A8F773B0083F5A5 /* libicucore.dylib */; };
+		B2F508F11A8F77410083F5A5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F508F01A8F77410083F5A5 /* SystemConfiguration.framework */; };
+		B2F508F71A8F797C0083F5A5 /* Navitia.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F508F31A8F797C0083F5A5 /* Navitia.m */; };
+		B2F508F81A8F797C0083F5A5 /* navitiaCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F508F51A8F797C0083F5A5 /* navitiaCondition.m */; };
+		B2F508F91A8F797C0083F5A5 /* NavitiaConditionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F508F61A8F797C0083F5A5 /* NavitiaConditionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +79,12 @@
 		208FF295391BB1302B476401 /* Pods-FeelAtHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeelAtHome.release.xcconfig"; path = "Pods/Target Support Files/Pods-FeelAtHome/Pods-FeelAtHome.release.xcconfig"; sourceTree = "<group>"; };
 		260035BDDA7D3D41FFEF120C /* libPods-FeelAtHome.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FeelAtHome.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D5FBB21FE76C95E90D0C1C /* Pods-FeelAtHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeelAtHome.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FeelAtHome/Pods-FeelAtHome.debug.xcconfig"; sourceTree = "<group>"; };
+		B21FEA8D1A8E21F9007C1B22 /* MyfoxAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyfoxAuth.h; sourceTree = "<group>"; };
+		B21FEA8E1A8E21F9007C1B22 /* MyfoxAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyfoxAuth.m; sourceTree = "<group>"; };
+		B21FEA901A8E2857007C1B22 /* DebugAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugAction.h; sourceTree = "<group>"; };
+		B21FEA911A8E2857007C1B22 /* DebugAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugAction.m; sourceTree = "<group>"; };
+		B21FEA941A8E46C2007C1B22 /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
+		B21FEA951A8E46C2007C1B22 /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
 		B22EA30D1A7A422700455241 /* FeelAtHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeelAtHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22EA3101A7A422700455241 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B22EA3121A7A422700455241 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -102,12 +127,17 @@
 		B288A56D1A8D225200EEED21 /* MyfoxShutterActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyfoxShutterActionView.xib; sourceTree = "<group>"; };
 		B288A56F1A8D226F00EEED21 /* MyfoxLightsActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyfoxLightsActionView.xib; sourceTree = "<group>"; };
 		B288A5721A8D265200EEED21 /* TimeConditionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeConditionViewController.xib; sourceTree = "<group>"; };
-		B2B003DB1A8CE634007BCFEB /* MyfoxAuth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyfoxAuth.h; sourceTree = "<group>"; };
-		B2B003DC1A8CE634007BCFEB /* MyfoxAuth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyfoxAuth.m; sourceTree = "<group>"; };
 		B2B003DD1A8CE634007BCFEB /* MyfoxHeaterAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyfoxHeaterAction.h; sourceTree = "<group>"; };
 		B2B003DE1A8CE634007BCFEB /* MyfoxHeaterAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyfoxHeaterAction.m; sourceTree = "<group>"; };
 		B2B003DF1A8CE634007BCFEB /* MyfoxShutterAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyfoxShutterAction.h; sourceTree = "<group>"; };
 		B2B003E01A8CE634007BCFEB /* MyfoxShutterAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyfoxShutterAction.m; sourceTree = "<group>"; };
+		B2B45ECB1A8F805E00EB4028 /* NotificationAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationAction.h; sourceTree = "<group>"; };
+		B2B45ECC1A8F805E00EB4028 /* NotificationAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationAction.m; sourceTree = "<group>"; };
+		B2B45ECF1A8F85FB00EB4028 /* NotificationActionSetupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationActionSetupView.xib; sourceTree = "<group>"; };
+		B2B45ED11A8FA8BE00EB4028 /* Pebble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pebble.h; sourceTree = "<group>"; };
+		B2B45ED21A8FA8BE00EB4028 /* Pebble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pebble.m; sourceTree = "<group>"; };
+		B2B45ED41A8FA92000EB4028 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
+		B2B45ED51A8FA92000EB4028 /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
 		B2CF88171A827EFE005B71E9 /* MasterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterCollectionViewCell.h; sourceTree = "<group>"; };
 		B2CF88181A827EFE005B71E9 /* MasterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterCollectionViewCell.m; sourceTree = "<group>"; };
 		B2CF881A1A82A24B005B71E9 /* DetailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCollectionViewCell.h; sourceTree = "<group>"; };
@@ -120,6 +150,50 @@
 		B2EC8E301A88DFF300465C7C /* Action.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Action.h; sourceTree = "<group>"; };
 		B2EC8E351A88FEB600465C7C /* NSInvocation+blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+blocks.h"; path = "NSInvocation-blocks/NSInvocation+blocks.h"; sourceTree = "<group>"; };
 		B2EC8E361A88FEB600465C7C /* NSInvocation+blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+blocks.m"; path = "NSInvocation-blocks/NSInvocation+blocks.m"; sourceTree = "<group>"; };
+		B2F508BE1A8F75690083F5A5 /* deezerAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deezerAction.h; sourceTree = "<group>"; };
+		B2F508BF1A8F75690083F5A5 /* deezerAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = deezerAction.m; sourceTree = "<group>"; };
+		B2F508C01A8F75690083F5A5 /* deezerActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = deezerActionView.xib; sourceTree = "<group>"; };
+		B2F508C51A8F76C30083F5A5 /* DZRResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DZRResources.bundle; sourceTree = "<group>"; };
+		B2F508C71A8F76C30083F5A5 /* Deezer+Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Deezer+Compatibility.h"; sourceTree = "<group>"; };
+		B2F508C81A8F76C30083F5A5 /* DeezerConnect+Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DeezerConnect+Compatibility.h"; sourceTree = "<group>"; };
+		B2F508C91A8F76C30083F5A5 /* DeezerConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeezerConnect.h; sourceTree = "<group>"; };
+		B2F508CA1A8F76C30083F5A5 /* DeezerRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeezerRequestDelegate.h; sourceTree = "<group>"; };
+		B2F508CB1A8F76C30083F5A5 /* DZRAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRAlbum.h; sourceTree = "<group>"; };
+		B2F508CC1A8F76C30083F5A5 /* DZRArtist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRArtist.h; sourceTree = "<group>"; };
+		B2F508CD1A8F76C30083F5A5 /* DZRCancelable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRCancelable.h; sourceTree = "<group>"; };
+		B2F508CE1A8F76C30083F5A5 /* DZRComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRComment.h; sourceTree = "<group>"; };
+		B2F508CF1A8F76C30083F5A5 /* DZREditorial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZREditorial.h; sourceTree = "<group>"; };
+		B2F508D01A8F76C30083F5A5 /* DZRFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRFolder.h; sourceTree = "<group>"; };
+		B2F508D11A8F76C30083F5A5 /* DZRGenericCancelable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRGenericCancelable.h; sourceTree = "<group>"; };
+		B2F508D21A8F76C30083F5A5 /* DZRGenre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRGenre.h; sourceTree = "<group>"; };
+		B2F508D31A8F76C30083F5A5 /* DZRManagedRadio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRManagedRadio.h; sourceTree = "<group>"; };
+		B2F508D41A8F76C30083F5A5 /* DZRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRModel.h; sourceTree = "<group>"; };
+		B2F508D51A8F76C30083F5A5 /* DZRNetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRNetworkRequest.h; sourceTree = "<group>"; };
+		B2F508D61A8F76C30083F5A5 /* DZRObject+Compatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DZRObject+Compatibility.h"; sourceTree = "<group>"; };
+		B2F508D71A8F76C30083F5A5 /* DZRObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRObject.h; sourceTree = "<group>"; };
+		B2F508D81A8F76C30083F5A5 /* DZRObjectList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRObjectList.h; sourceTree = "<group>"; };
+		B2F508D91A8F76C30083F5A5 /* DZRPlayableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRPlayableArray.h; sourceTree = "<group>"; };
+		B2F508DA1A8F76C30083F5A5 /* DZRPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRPlayer.h; sourceTree = "<group>"; };
+		B2F508DB1A8F76C30083F5A5 /* DZRPlaylist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRPlaylist.h; sourceTree = "<group>"; };
+		B2F508DC1A8F76C30083F5A5 /* DZRRadio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRRadio.h; sourceTree = "<group>"; };
+		B2F508DD1A8F76C30083F5A5 /* DZRRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRRequestManager.h; sourceTree = "<group>"; };
+		B2F508DE1A8F76C30083F5A5 /* DZRTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRTrack.h; sourceTree = "<group>"; };
+		B2F508DF1A8F76C30083F5A5 /* DZRUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZRUser.h; sourceTree = "<group>"; };
+		B2F508E01A8F76C30083F5A5 /* NSBundle+DZRBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+DZRBundle.h"; sourceTree = "<group>"; };
+		B2F508E11A8F76C30083F5A5 /* NSError+DZRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+DZRModel.h"; sourceTree = "<group>"; };
+		B2F508E21A8F76C30083F5A5 /* libDeezer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDeezer.a; sourceTree = "<group>"; };
+		B2F508E51A8F76E40083F5A5 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		B2F508E71A8F76FE0083F5A5 /* Deezer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deezer.h; sourceTree = "<group>"; };
+		B2F508E81A8F76FE0083F5A5 /* Deezer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deezer.m; sourceTree = "<group>"; };
+		B2F508EA1A8F772C0083F5A5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B2F508EC1A8F77330083F5A5 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		B2F508EE1A8F773B0083F5A5 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		B2F508F01A8F77410083F5A5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B2F508F21A8F797C0083F5A5 /* Navitia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Navitia.h; sourceTree = "<group>"; };
+		B2F508F31A8F797C0083F5A5 /* Navitia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Navitia.m; sourceTree = "<group>"; };
+		B2F508F41A8F797C0083F5A5 /* navitiaCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = navitiaCondition.h; sourceTree = "<group>"; };
+		B2F508F51A8F797C0083F5A5 /* navitiaCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = navitiaCondition.m; sourceTree = "<group>"; };
+		B2F508F61A8F797C0083F5A5 /* NavitiaConditionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavitiaConditionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +201,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F508F11A8F77410083F5A5 /* SystemConfiguration.framework in Frameworks */,
+				B2F508EF1A8F773B0083F5A5 /* libicucore.dylib in Frameworks */,
+				B2F508ED1A8F77340083F5A5 /* CoreAudio.framework in Frameworks */,
+				B2F508EB1A8F772C0083F5A5 /* AudioToolbox.framework in Frameworks */,
+				B2F508E61A8F76E40083F5A5 /* MediaPlayer.framework in Frameworks */,
 				B22EA3131A7A422700455241 /* CoreGraphics.framework in Frameworks */,
+				B2F508E41A8F76C30083F5A5 /* libDeezer.a in Frameworks */,
 				B22EA3151A7A422700455241 /* UIKit.framework in Frameworks */,
 				B22EA3111A7A422700455241 /* Foundation.framework in Frameworks */,
 				4E9F822297C3D6FDA3D73FC9 /* libPods-FeelAtHome.a in Frameworks */,
@@ -156,9 +236,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B21FEA931A8E285D007C1B22 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				B21FEA901A8E2857007C1B22 /* DebugAction.h */,
+				B21FEA911A8E2857007C1B22 /* DebugAction.m */,
+			);
+			name = Debug;
+			sourceTree = "<group>";
+		};
 		B2299D571A8BE4B600DD5AE8 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				B2B45ED11A8FA8BE00EB4028 /* Pebble.h */,
+				B2B45ED21A8FA8BE00EB4028 /* Pebble.m */,
+				B2F508F21A8F797C0083F5A5 /* Navitia.h */,
+				B2F508F31A8F797C0083F5A5 /* Navitia.m */,
+				B2F508E71A8F76FE0083F5A5 /* Deezer.h */,
+				B2F508E81A8F76FE0083F5A5 /* Deezer.m */,
 				B2B003DA1A8CE5F1007BCFEB /* Myfox */,
 				B2EC8E281A88C62600465C7C /* Scenario.h */,
 				B2EC8E291A88C62600465C7C /* Scenario.m */,
@@ -173,6 +268,11 @@
 		B2299D581A8BE4CF00DD5AE8 /* Upstream */ = {
 			isa = PBXGroup;
 			children = (
+				B2F508C41A8F76C30083F5A5 /* DeezerSDK */,
+				B21FEA941A8E46C2007C1B22 /* NSTimer+Blocks.h */,
+				B21FEA951A8E46C2007C1B22 /* NSTimer+Blocks.m */,
+				B2B45ED41A8FA92000EB4028 /* NSMutableArray+QueueAdditions.h */,
+				B2B45ED51A8FA92000EB4028 /* NSMutableArray+QueueAdditions.m */,
 				B2EC8E351A88FEB600465C7C /* NSInvocation+blocks.h */,
 				B2EC8E361A88FEB600465C7C /* NSInvocation+blocks.m */,
 			);
@@ -202,6 +302,11 @@
 		B22EA30F1A7A422700455241 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2F508F01A8F77410083F5A5 /* SystemConfiguration.framework */,
+				B2F508EE1A8F773B0083F5A5 /* libicucore.dylib */,
+				B2F508EC1A8F77330083F5A5 /* CoreAudio.framework */,
+				B2F508EA1A8F772C0083F5A5 /* AudioToolbox.framework */,
+				B2F508E51A8F76E40083F5A5 /* MediaPlayer.framework */,
 				B22EA3101A7A422700455241 /* Foundation.framework */,
 				B22EA3121A7A422700455241 /* CoreGraphics.framework */,
 				B22EA3141A7A422700455241 /* UIKit.framework */,
@@ -280,6 +385,7 @@
 		B288A5661A8CFFA600EEED21 /* Conditions */ = {
 			isa = PBXGroup;
 			children = (
+				B2F508FA1A8F79970083F5A5 /* Navitia */,
 				B288A5711A8D264100EEED21 /* TimeCondition */,
 			);
 			name = Conditions;
@@ -288,9 +394,12 @@
 		B288A5671A8CFFB200EEED21 /* Actions */ = {
 			isa = PBXGroup;
 			children = (
+				B2F508C31A8F756E0083F5A5 /* Deezer */,
+				B21FEA931A8E285D007C1B22 /* Debug */,
 				B288A56A1A8D067E00EEED21 /* MyfoxHeater */,
 				B288A56B1A8D07EA00EEED21 /* MyfoxShutter */,
 				B288A56C1A8D07F300EEED21 /* MyfoxLights */,
+				B2B45ECE1A8F806900EB4028 /* Notification */,
 			);
 			name = Actions;
 			sourceTree = "<group>";
@@ -338,10 +447,84 @@
 		B2B003DA1A8CE5F1007BCFEB /* Myfox */ = {
 			isa = PBXGroup;
 			children = (
-				B2B003DB1A8CE634007BCFEB /* MyfoxAuth.h */,
-				B2B003DC1A8CE634007BCFEB /* MyfoxAuth.m */,
+				B21FEA8D1A8E21F9007C1B22 /* MyfoxAuth.h */,
+				B21FEA8E1A8E21F9007C1B22 /* MyfoxAuth.m */,
 			);
 			name = Myfox;
+			sourceTree = "<group>";
+		};
+		B2B45ECE1A8F806900EB4028 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				B2B45ECB1A8F805E00EB4028 /* NotificationAction.h */,
+				B2B45ECC1A8F805E00EB4028 /* NotificationAction.m */,
+				B2B45ECF1A8F85FB00EB4028 /* NotificationActionSetupView.xib */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+		B2F508C31A8F756E0083F5A5 /* Deezer */ = {
+			isa = PBXGroup;
+			children = (
+				B2F508BE1A8F75690083F5A5 /* deezerAction.h */,
+				B2F508BF1A8F75690083F5A5 /* deezerAction.m */,
+				B2F508C01A8F75690083F5A5 /* deezerActionView.xib */,
+			);
+			name = Deezer;
+			sourceTree = "<group>";
+		};
+		B2F508C41A8F76C30083F5A5 /* DeezerSDK */ = {
+			isa = PBXGroup;
+			children = (
+				B2F508C51A8F76C30083F5A5 /* DZRResources.bundle */,
+				B2F508C61A8F76C30083F5A5 /* include */,
+				B2F508E21A8F76C30083F5A5 /* libDeezer.a */,
+			);
+			path = DeezerSDK;
+			sourceTree = "<group>";
+		};
+		B2F508C61A8F76C30083F5A5 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B2F508C71A8F76C30083F5A5 /* Deezer+Compatibility.h */,
+				B2F508C81A8F76C30083F5A5 /* DeezerConnect+Compatibility.h */,
+				B2F508C91A8F76C30083F5A5 /* DeezerConnect.h */,
+				B2F508CA1A8F76C30083F5A5 /* DeezerRequestDelegate.h */,
+				B2F508CB1A8F76C30083F5A5 /* DZRAlbum.h */,
+				B2F508CC1A8F76C30083F5A5 /* DZRArtist.h */,
+				B2F508CD1A8F76C30083F5A5 /* DZRCancelable.h */,
+				B2F508CE1A8F76C30083F5A5 /* DZRComment.h */,
+				B2F508CF1A8F76C30083F5A5 /* DZREditorial.h */,
+				B2F508D01A8F76C30083F5A5 /* DZRFolder.h */,
+				B2F508D11A8F76C30083F5A5 /* DZRGenericCancelable.h */,
+				B2F508D21A8F76C30083F5A5 /* DZRGenre.h */,
+				B2F508D31A8F76C30083F5A5 /* DZRManagedRadio.h */,
+				B2F508D41A8F76C30083F5A5 /* DZRModel.h */,
+				B2F508D51A8F76C30083F5A5 /* DZRNetworkRequest.h */,
+				B2F508D61A8F76C30083F5A5 /* DZRObject+Compatibility.h */,
+				B2F508D71A8F76C30083F5A5 /* DZRObject.h */,
+				B2F508D81A8F76C30083F5A5 /* DZRObjectList.h */,
+				B2F508D91A8F76C30083F5A5 /* DZRPlayableArray.h */,
+				B2F508DA1A8F76C30083F5A5 /* DZRPlayer.h */,
+				B2F508DB1A8F76C30083F5A5 /* DZRPlaylist.h */,
+				B2F508DC1A8F76C30083F5A5 /* DZRRadio.h */,
+				B2F508DD1A8F76C30083F5A5 /* DZRRequestManager.h */,
+				B2F508DE1A8F76C30083F5A5 /* DZRTrack.h */,
+				B2F508DF1A8F76C30083F5A5 /* DZRUser.h */,
+				B2F508E01A8F76C30083F5A5 /* NSBundle+DZRBundle.h */,
+				B2F508E11A8F76C30083F5A5 /* NSError+DZRModel.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		B2F508FA1A8F79970083F5A5 /* Navitia */ = {
+			isa = PBXGroup;
+			children = (
+				B2F508F41A8F797C0083F5A5 /* navitiaCondition.h */,
+				B2F508F51A8F797C0083F5A5 /* navitiaCondition.m */,
+				B2F508F61A8F797C0083F5A5 /* NavitiaConditionView.xib */,
+			);
+			name = Navitia;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,12 +608,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F508E31A8F76C30083F5A5 /* DZRResources.bundle in Resources */,
 				B22EA3271A7A422700455241 /* Main_iPad.storyboard in Resources */,
 				B288A5701A8D226F00EEED21 /* MyfoxLightsActionView.xib in Resources */,
 				B288A5691A8D00C100EEED21 /* MyfoxHeaterActionView.xib in Resources */,
+				B2F508F91A8F797C0083F5A5 /* NavitiaConditionView.xib in Resources */,
 				B22EA32F1A7A422700455241 /* Images.xcassets in Resources */,
 				B22EA3241A7A422700455241 /* Main_iPhone.storyboard in Resources */,
+				B2F508C21A8F75690083F5A5 /* deezerActionView.xib in Resources */,
 				B288A5731A8D265200EEED21 /* TimeConditionViewController.xib in Resources */,
+				B2B45ED01A8F85FB00EB4028 /* NotificationActionSetupView.xib in Resources */,
 				B22EA31B1A7A422700455241 /* InfoPlist.strings in Resources */,
 				B288A56E1A8D225200EEED21 /* MyfoxShutterActionView.xib in Resources */,
 			);
@@ -485,24 +672,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2B003E21A8CE634007BCFEB /* MyfoxHeaterAction.m in Sources */,
+				B21FEA921A8E2857007C1B22 /* DebugAction.m in Sources */,
 				B22EA3211A7A422700455241 /* AppDelegate.m in Sources */,
 				B2EA9DDE1A8B593400E0A7E6 /* MyfoxLightsAction.m in Sources */,
+				B2B45ED61A8FA92000EB4028 /* NSMutableArray+QueueAdditions.m in Sources */,
+				B21FEA8F1A8E21F9007C1B22 /* MyfoxAuth.m in Sources */,
 				B23B454A1A8B732300B36BDF /* ScenarioViewController.m in Sources */,
 				B23B45531A8BD1D300B36BDF /* ActionsTableViewController.m in Sources */,
 				B2B003E31A8CE634007BCFEB /* MyfoxShutterAction.m in Sources */,
 				B2EC8E2A1A88C62600465C7C /* Scenario.m in Sources */,
+				B2B45ED31A8FA8BE00EB4028 /* Pebble.m in Sources */,
 				B22EA32A1A7A422700455241 /* MasterViewController.m in Sources */,
+				B2F508E91A8F76FE0083F5A5 /* Deezer.m in Sources */,
 				B288A5651A8CFDD400EEED21 /* SetupViewController.m in Sources */,
 				B23B45501A8BCE8400B36BDF /* ConditionsTableViewController.m in Sources */,
 				B22EA31D1A7A422700455241 /* main.m in Sources */,
 				B2CF881C1A82A24B005B71E9 /* DetailCollectionViewCell.m in Sources */,
 				B23B454D1A8BC88A00B36BDF /* StepsTableViewController.m in Sources */,
+				B2F508F81A8F797C0083F5A5 /* navitiaCondition.m in Sources */,
+				B2F508F71A8F797C0083F5A5 /* Navitia.m in Sources */,
 				B23B45441A8B72E400B36BDF /* ScenarioListViewController.m in Sources */,
+				B21FEA961A8E46C2007C1B22 /* NSTimer+Blocks.m in Sources */,
+				B2F508C11A8F75690083F5A5 /* deezerAction.m in Sources */,
+				B2B45ECD1A8F805E00EB4028 /* NotificationAction.m in Sources */,
 				B23B45471A8B72F600B36BDF /* TimeCondition.m in Sources */,
 				B22EA32D1A7A422700455241 /* DetailViewController.m in Sources */,
 				B2EC8E371A88FEB600465C7C /* NSInvocation+blocks.m in Sources */,
 				B23B455C1A8BDE3A00B36BDF /* IfThenViewController.m in Sources */,
-				B2B003E11A8CE634007BCFEB /* MyfoxAuth.m in Sources */,
 				B2CF88191A827EFE005B71E9 /* MasterCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -647,6 +843,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Feel@Home/FeelAtHome-Prefix.pch";
 				INFOPLIST_FILE = "Feel@Home/FeelAtHome-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Data/nfs/zfs-student-5/users/2014/rlambert/Documents/Feel@Home/Feel@Home/DeezerSDK",
+				);
 				PRODUCT_NAME = FeelAtHome;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -667,6 +867,10 @@
 				GCC_PREFIX_HEADER = "Feel@Home/FeelAtHome-Prefix.pch";
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INFOPLIST_FILE = "Feel@Home/FeelAtHome-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Volumes/Data/nfs/zfs-student-5/users/2014/rlambert/Documents/Feel@Home/Feel@Home/DeezerSDK",
+				);
 				PRODUCT_NAME = FeelAtHome;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

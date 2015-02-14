@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailCollectionViewCell.h"
 
-@interface DetailViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface DetailViewController : UICollectionViewController<DetailCollectionViewCellDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) id detailItem;
 
