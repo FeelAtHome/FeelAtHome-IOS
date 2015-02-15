@@ -41,6 +41,7 @@ Deezer *deezer;
 {
     radio = [decoder decodeObjectForKey:@"radio"];
     deezer = [Deezer alloc];
+    [deezer deezerAuth];
     return self;
 }
 
@@ -52,6 +53,8 @@ Deezer *deezer;
 #pragma mark -end NSCoding
 
 -(void) run{
+    NSLog(@"[deezerAction run]");
+    NSLog(@"%@", radio);
     [deezer deezerPlayRadio: radio];
 }
 

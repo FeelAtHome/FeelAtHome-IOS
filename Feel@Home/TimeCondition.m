@@ -71,10 +71,6 @@
     [nextNotif invalidate];
 }
 
--(void)dealloc {
-    NSLog(@"TimeCondition deallocating");
-}
-
 - (void) nextDate {
     NSDateComponents* deltaComps = [[NSDateComponents alloc] init];
     [deltaComps setDay:1];

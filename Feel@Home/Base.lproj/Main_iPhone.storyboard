@@ -86,6 +86,9 @@
                                 <state key="normal" title="Settings">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="6oJ-5l-MSO" kind="push" identifier="showSettings" id="3xi-wL-jmn"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -237,6 +240,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unn-We-X9N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1031" y="247"/>
+        </scene>
+        <!--Settings View Controller - Myfox Settings-->
+        <scene sceneID="j9c-CI-1zS">
+            <objects>
+                <viewController id="6oJ-5l-MSO" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fpr-GB-fO4"/>
+                        <viewControllerLayoutGuide type="bottom" id="djw-Az-5A1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8lH-4O-HCD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Myfox Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9bl-gD-udV">
+                                <rect key="frame" x="20" y="81" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Myfox Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ap0-MZ-T9R">
+                                <rect key="frame" x="20" y="119" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Myfox Settings" id="Ohp-28-OWG"/>
+                    <connections>
+                        <outlet property="myfoxPasswordField" destination="ap0-MZ-T9R" id="aWE-Gf-HoA"/>
+                        <outlet property="myfoxUsernameField" destination="9bl-gD-udV" id="hcU-FT-bh8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Ma-mu-D4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1031" y="912"/>
         </scene>
         <!--If Then View Controller - If this Then that-->
         <scene sceneID="bEi-Xh-Tar">

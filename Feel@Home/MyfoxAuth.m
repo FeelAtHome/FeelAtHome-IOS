@@ -95,6 +95,8 @@ enum {
 
 - (void) list_devices: (NSString*)type withBlock: (void(^)(NSArray*, NSError*))cb
 {
+    NSLog(@"listing devices");
+    @try {
     [self get_request_site: ^(int siteId, NSError* error_site) {
         if (error_site){
             cb(nil, error_site);
@@ -153,6 +155,10 @@ enum {
          }];
         
     }];
+    } @catch (id e)
+    {
+        NSLog(@"Had an error : %@", e);
+    }
 
 }
 

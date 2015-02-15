@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsViewController.h"
 
 @class DetailViewController;
 
-@interface MasterViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface MasterViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, SettingsViewControllerDelegate>
 
 @property NSArray                   *sites;
 @property NSMutableDictionary              *sitesData;

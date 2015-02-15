@@ -34,6 +34,8 @@
 		B23B45501A8BCE8400B36BDF /* ConditionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23B454F1A8BCE8400B36BDF /* ConditionsTableViewController.m */; };
 		B23B45531A8BD1D300B36BDF /* ActionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23B45521A8BD1D300B36BDF /* ActionsTableViewController.m */; };
 		B23B455C1A8BDE3A00B36BDF /* IfThenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23B455B1A8BDE3A00B36BDF /* IfThenViewController.m */; };
+		B24CB8EE1A90D21C00AA4A1A /* DebugCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CB8ED1A90D21C00AA4A1A /* DebugCondition.m */; };
+		B24CB8F51A90D72C00AA4A1A /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B24CB8F41A90D72C00AA4A1A /* SettingsViewController.m */; };
 		B288A5651A8CFDD400EEED21 /* SetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B288A5641A8CFDD400EEED21 /* SetupViewController.m */; };
 		B288A5691A8D00C100EEED21 /* MyfoxHeaterActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B288A5681A8D00C100EEED21 /* MyfoxHeaterActionView.xib */; };
 		B288A56E1A8D225200EEED21 /* MyfoxShutterActionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B288A56D1A8D225200EEED21 /* MyfoxShutterActionView.xib */; };
@@ -121,6 +123,10 @@
 		B23B45521A8BD1D300B36BDF /* ActionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionsTableViewController.m; sourceTree = "<group>"; };
 		B23B455A1A8BDE3A00B36BDF /* IfThenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IfThenViewController.h; sourceTree = "<group>"; };
 		B23B455B1A8BDE3A00B36BDF /* IfThenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IfThenViewController.m; sourceTree = "<group>"; };
+		B24CB8EC1A90D21C00AA4A1A /* DebugCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugCondition.h; sourceTree = "<group>"; };
+		B24CB8ED1A90D21C00AA4A1A /* DebugCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugCondition.m; sourceTree = "<group>"; };
+		B24CB8F31A90D72C00AA4A1A /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		B24CB8F41A90D72C00AA4A1A /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		B288A5631A8CFDD400EEED21 /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
 		B288A5641A8CFDD400EEED21 /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
 		B288A5681A8D00C100EEED21 /* MyfoxHeaterActionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyfoxHeaterActionView.xib; sourceTree = "<group>"; };
@@ -252,8 +258,7 @@
 				B2B45ED21A8FA8BE00EB4028 /* Pebble.m */,
 				B2F508F21A8F797C0083F5A5 /* Navitia.h */,
 				B2F508F31A8F797C0083F5A5 /* Navitia.m */,
-				B2F508E71A8F76FE0083F5A5 /* Deezer.h */,
-				B2F508E81A8F76FE0083F5A5 /* Deezer.m */,
+				B24CB8F61A90F66400AA4A1A /* Deezer */,
 				B2B003DA1A8CE5F1007BCFEB /* Myfox */,
 				B2EC8E281A88C62600465C7C /* Scenario.h */,
 				B2EC8E291A88C62600465C7C /* Scenario.m */,
@@ -347,6 +352,8 @@
 				B22EA32C1A7A422700455241 /* DetailViewController.m */,
 				B2CF881A1A82A24B005B71E9 /* DetailCollectionViewCell.h */,
 				B2CF881B1A82A24B005B71E9 /* DetailCollectionViewCell.m */,
+				B24CB8F31A90D72C00AA4A1A /* SettingsViewController.h */,
+				B24CB8F41A90D72C00AA4A1A /* SettingsViewController.m */,
 				B22EA32E1A7A422700455241 /* Images.xcassets */,
 				B22EA3171A7A422700455241 /* Supporting Files */,
 			);
@@ -382,9 +389,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B24CB8EF1A90D22000AA4A1A /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				B24CB8EC1A90D21C00AA4A1A /* DebugCondition.h */,
+				B24CB8ED1A90D21C00AA4A1A /* DebugCondition.m */,
+			);
+			name = Debug;
+			sourceTree = "<group>";
+		};
+		B24CB8F61A90F66400AA4A1A /* Deezer */ = {
+			isa = PBXGroup;
+			children = (
+				B2F508E71A8F76FE0083F5A5 /* Deezer.h */,
+				B2F508E81A8F76FE0083F5A5 /* Deezer.m */,
+			);
+			name = Deezer;
+			sourceTree = "<group>";
+		};
 		B288A5661A8CFFA600EEED21 /* Conditions */ = {
 			isa = PBXGroup;
 			children = (
+				B24CB8EF1A90D22000AA4A1A /* Debug */,
 				B2F508FA1A8F79970083F5A5 /* Navitia */,
 				B288A5711A8D264100EEED21 /* TimeCondition */,
 			);
@@ -696,8 +722,10 @@
 				B2F508C11A8F75690083F5A5 /* deezerAction.m in Sources */,
 				B2B45ECD1A8F805E00EB4028 /* NotificationAction.m in Sources */,
 				B23B45471A8B72F600B36BDF /* TimeCondition.m in Sources */,
+				B24CB8F51A90D72C00AA4A1A /* SettingsViewController.m in Sources */,
 				B22EA32D1A7A422700455241 /* DetailViewController.m in Sources */,
 				B2EC8E371A88FEB600465C7C /* NSInvocation+blocks.m in Sources */,
+				B24CB8EE1A90D21C00AA4A1A /* DebugCondition.m in Sources */,
 				B23B455C1A8BDE3A00B36BDF /* IfThenViewController.m in Sources */,
 				B2CF88191A827EFE005B71E9 /* MasterCollectionViewCell.m in Sources */,
 			);
@@ -847,6 +875,19 @@
 					"$(inherited)",
 					"/Volumes/Data/nfs/zfs-student-5/users/2014/rlambert/Documents/Feel@Home/Feel@Home/DeezerSDK",
 				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/LRResty\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/NSData+Base64\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/NXOAuth2Client\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/PebbleKit\"",
+				);
 				PRODUCT_NAME = FeelAtHome;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -870,6 +911,19 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Volumes/Data/nfs/zfs-student-5/users/2014/rlambert/Documents/Feel@Home/Feel@Home/DeezerSDK",
+				);
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/LRResty\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/NSData+Base64\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/NXOAuth2Client\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/PebbleKit\"",
 				);
 				PRODUCT_NAME = FeelAtHome;
 				PROVISIONING_PROFILE = "";

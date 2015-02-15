@@ -9,6 +9,7 @@
 #import "ConditionsTableViewController.h"
 #import "TimeCondition.h"
 #import "navitiaCondition.h"
+#import "DebugCondition.h"
 
 @interface ConditionsTableViewController ()
 
@@ -36,7 +37,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     // TODO (maybe) : Find all implementations of a class
     // for now, static array
-    self.conditionsClasses = @[[TimeCondition class], [navitiaCondition class]];
+    self.conditionsClasses = @[[TimeCondition class], [navitiaCondition class], [DebugCondition class]];
     self.tableView.allowsSelection = YES;
 }
 

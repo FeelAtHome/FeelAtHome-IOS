@@ -13,6 +13,7 @@
 #import "NXOauth2Constants.h"
 #import <PebbleKit/PebbleKit.h>
 #import "Pebble.h"
+#import "Scenario.h"
 
 @interface MasterViewController () {
     NSMutableArray *_objects;
@@ -45,59 +46,18 @@
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     //[self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"PwettyCell"];
-
-    // TODO : Request those from myfox
-    auth = [[MyfoxAuth alloc] initAuthorize:@"mbarbari@student.42.fr" withPassword:@"140488"];
-    // TODO : no function that returns list of lights...
-    self.sitesData = [[NSMutableDictionary alloc] init];
-    [auth list_devices:@"shutter" withBlock:^(NSArray *arr, NSError *err) {
-        self.sitesData[@"Blinds"] = @{@"icon" : @"Blinds", @"data": @{@"Switches": [[NSMutableArray alloc] init]}};
-        [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [self.sitesData[@"Blinds"][@"data"][@"Switches"] addObject:@{@"name": obj[@"label"], @"id": obj[@"deviceId"]}];
-        }];
-        self.sites = [[self.sitesData keyEnumerator] allObjects];
-        [self.collectionView reloadData];
-    }];
-    [auth list_devices:@"heater" withBlock:^(NSArray *arr, NSError *err) {
-        if (err)
-        {
-            NSLog(@"You got mail 2 ! : %@", err);
-            return;
-        }
-        self.sitesData[@"Heater"] = @{@"icon" : @"Heater", @"data": @{@"Switches": [[NSMutableArray alloc] init]}};
-        [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [self.sitesData[@"Heater"][@"data"][@"Switches"] addObject:@{@"name": obj[@"label"], @"id": obj[@"deviceId"]}];
-        }];
-        self.sites = [[self.sitesData keyEnumerator] allObjects];
-        [self.collectionView reloadData];
-    }];
-    [auth list_devices:@"electric" withBlock:^(NSArray *arr, NSError *err) {
-        if (err)
-        {
-            NSLog(@"You got mail 2 ! : %@", err);
-            return;
-        }
-        self.sitesData[@"Lights"] = @{@"icon" : @"LightBulb", @"data": @{@"Switches": [[NSMutableArray alloc] init]}};
-        [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            [self.sitesData[@"Lights"][@"data"][@"Switches"] addObject:@{@"name": obj[@"label"], @"id": obj[@"groupId"]}];
-        }];
-        self.sites = [[self.sitesData keyEnumerator] allObjects];
-        [self.collectionView reloadData];
-    }];
-
     [self startPebbleCommunication];
-/*    self.sitesData = @{@"Lights": @{@"icon": @"LightBulb", @"data": @{@"Switches" : @[@{@"name": @"Living Room"}]}},
-                       @"Alarms": @{ @"icon": @"Alarm", @"data": @{} },
-                       @"Blinds": @{ @"icon": @"Blinds", @"data": @{} },
-                       @"Door": @{ @"icon": @"Door", @"data": @{} },
-                       @"Electric": @{ @"icon": @"Electric", @"data": @{} },
-                       @"Music": @{ @"icon": @"Music", @"data": @{} },
-                       @"Heater": @{ @"icon": @"Heater", @"data": @{} }
-    };*/
+    // TODO : Should probably use keychain instead of NSUserDefault
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"myfoxUsername"] == nil)
+        [self performSegueWithIdentifier:@"showSettings" sender:self];
+    else
+        [self startMyfoxCommunication];
 
+    
     // TODO : Loading and setting up of the tasks should happen in AppDelegate
     // self.scenarios = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"scenarios"];
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Wallpaper"]];
+    [Scenario sharedInstance];
 }
 
 - (void)didReceiveMemoryWarning
@@ -126,6 +86,47 @@
         return YES;
     } withUUID:pebbleAppUUID];
 }
+
+- (void)startMyfoxCommunication
+{
+    if (auth == nil)
+        auth = [[MyfoxAuth alloc] initAuthorize:[[NSUserDefaults standardUserDefaults] objectForKey:@"myfoxUsername"] withPassword:[[NSUserDefaults standardUserDefaults] objectForKey:@"myfoxPassword"]];
+    self.sitesData = [[NSMutableDictionary alloc] init];
+    [auth list_devices:@"shutter" withBlock:^(NSArray *arr, NSError *err) {
+        self.sitesData[@"Blinds"] = @{@"icon" : @"Blinds", @"data": @{@"Switches": [[NSMutableArray alloc] init]}};
+        [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [self.sitesData[@"Blinds"][@"data"][@"Switches"] addObject:@{@"name": obj[@"label"], @"id": obj[@"deviceId"]}];
+        }];
+        self.sites = [[self.sitesData keyEnumerator] allObjects];
+        [auth list_devices:@"heater" withBlock:^(NSArray *arr, NSError *err) {
+            if (err)
+            {
+                NSLog(@"You got mail 2 ! : %@", err);
+                return;
+            }
+            self.sitesData[@"Heater"] = @{@"icon" : @"Heater", @"data": @{@"Switches": [[NSMutableArray alloc] init]}};
+            [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                [self.sitesData[@"Heater"][@"data"][@"Switches"] addObject:@{@"name": obj[@"label"], @"id": obj[@"deviceId"]}];
+            }];
+            self.sites = [[self.sitesData keyEnumerator] allObjects];
+            [auth list_devices:@"electric" withBlock:^(NSArray *arr, NSError *err) {
+                if (err)
+                {
+                    NSLog(@"You got mail 2 ! : %@", err);
+                    return;
+                }
+                self.sitesData[@"Lights"] = @{@"icon" : @"LightBulb", @"data": @{@"Switches": [[NSMutableArray alloc] init]}};
+                [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    [self.sitesData[@"Lights"][@"data"][@"Switches"] addObject:@{@"name": obj[@"label"], @"id": obj[@"groupId"]}];
+                }];
+                self.sites = [[self.sitesData keyEnumerator] allObjects];
+                [self.collectionView reloadData];
+                NSLog(@"%@", self.sitesData);
+            }];
+        }];
+    }];
+}
+
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -163,6 +164,10 @@
         NSDictionary *data = self.sitesData[self.sites[path.row]][@"data"];
         NSLog(@"%@", data);
         [(DetailViewController*)segue.destinationViewController setDetailItem:@{@"key": self.sites[path.row], @"value": data}];
+    }
+    else if ([segue.identifier isEqualToString:@"showSettings"])
+    {
+        [segue.destinationViewController setDelegate:self];
     }
 }
 

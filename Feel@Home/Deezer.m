@@ -14,10 +14,13 @@
 #import "DZRPlayer.h"
 
 @implementation Deezer
+{
+    id nextToPlay;
+}
 
 -(void) deezerAuth
 {
-    DeezerConnect *dzrconnect = [[DeezerConnect alloc] initWithAppId:@"151731" andDelegate:self];
+    DeezerConnect *dzrconnect = [[DeezerConnect alloc] initWithAppId:@"150241" andDelegate:self];
 
     [[DZRRequestManager defaultManager] setDzrConnect:dzrconnect];
     [dzrconnect authorize:@[DeezerConnectPermissionBasicAccess]];
@@ -31,25 +34,36 @@
     //NSString* Radio = @"36361";
     
     self.player = [[DZRPlayer alloc] initWithConnection:[[DZRRequestManager defaultManager] dzrConnect]];
-    //[self deezerPlayRadio: Radio];
-    //[self deezerPlayArtist: Artist];
+    if (nextToPlay)
+        [self.player play: nextToPlay];
 }
 
 -(void) deezerPlayArtist: (NSString*) Artist
 {
     [DZRObject searchFor:DZRSearchTypeAlbum withQuery: Artist requestManager:[DZRRequestManager defaultManager] callback:^(DZRObjectList *obj, NSError *err) {
         [obj objectAtIndex:0 withManager:[DZRRequestManager defaultManager] callback:^(id obj, NSError *error) {
-            [self.player play:obj];
+            if (self.player == nil)
+                nextToPlay = obj;
+            else
+                [self.player play:obj];
         }];
     }];
 }
 
 -(void) deezerPlayRadio: (id) sender
 {
-    [DZRRadio objectWithIdentifier: sender requestManager: [DZRRequestManager defaultManager] callback:^(id obj, NSError *error) {
-        [[obj iterator] nextWithRequestManager:[DZRRequestManager defaultManager] callback:^(DZRTrack *nextTrack, NSError *error){
+    [DZRRadio objectWithIdentifier: sender requestManager: [DZRRequestManager defaultManager] callback:^(id obj, NSError *error)
+    {
+        if (error) NSLog(@"%@", error);
+        [[obj iterator] nextWithRequestManager:[DZRRequestManager defaultManager] callback:^(DZRTrack *nextTrack, NSError *error)
+        {
+            if (error) NSLog(@"%@", error);
+            NSLog(@"nextTrack : %@", nextTrack);
         }];
-        [self.player play: obj];
+        if (self.player == nil)
+            nextToPlay = obj;
+        else
+            [self.player play: obj];
     }];
 }
 
