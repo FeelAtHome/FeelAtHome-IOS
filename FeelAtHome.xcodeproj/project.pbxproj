@@ -47,6 +47,9 @@
 		B2B45ED01A8F85FB00EB4028 /* NotificationActionSetupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B45ECF1A8F85FB00EB4028 /* NotificationActionSetupView.xib */; };
 		B2B45ED31A8FA8BE00EB4028 /* Pebble.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B45ED21A8FA8BE00EB4028 /* Pebble.m */; };
 		B2B45ED61A8FA92000EB4028 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B45ED51A8FA92000EB4028 /* NSMutableArray+QueueAdditions.m */; };
+		B2C343A71A912563002C8726 /* DeezerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C343A61A912563002C8726 /* DeezerViewController.m */; };
+		B2C343AB1A912859002C8726 /* navitiaCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C343A91A912859002C8726 /* navitiaCondition.m */; };
+		B2C343AC1A912859002C8726 /* NavitiaConditionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2C343AA1A912859002C8726 /* NavitiaConditionView.xib */; };
 		B2CF88191A827EFE005B71E9 /* MasterCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CF88181A827EFE005B71E9 /* MasterCollectionViewCell.m */; };
 		B2CF881C1A82A24B005B71E9 /* DetailCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2CF881B1A82A24B005B71E9 /* DetailCollectionViewCell.m */; };
 		B2EA9DDE1A8B593400E0A7E6 /* MyfoxLightsAction.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EA9DDD1A8B593400E0A7E6 /* MyfoxLightsAction.m */; };
@@ -63,8 +66,6 @@
 		B2F508EF1A8F773B0083F5A5 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F508EE1A8F773B0083F5A5 /* libicucore.dylib */; };
 		B2F508F11A8F77410083F5A5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F508F01A8F77410083F5A5 /* SystemConfiguration.framework */; };
 		B2F508F71A8F797C0083F5A5 /* Navitia.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F508F31A8F797C0083F5A5 /* Navitia.m */; };
-		B2F508F81A8F797C0083F5A5 /* navitiaCondition.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F508F51A8F797C0083F5A5 /* navitiaCondition.m */; };
-		B2F508F91A8F797C0083F5A5 /* NavitiaConditionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F508F61A8F797C0083F5A5 /* NavitiaConditionView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,11 @@
 		B2B45ED21A8FA8BE00EB4028 /* Pebble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pebble.m; sourceTree = "<group>"; };
 		B2B45ED41A8FA92000EB4028 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
 		B2B45ED51A8FA92000EB4028 /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
+		B2C343A51A912563002C8726 /* DeezerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeezerViewController.h; sourceTree = "<group>"; };
+		B2C343A61A912563002C8726 /* DeezerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeezerViewController.m; sourceTree = "<group>"; };
+		B2C343A81A912859002C8726 /* navitiaCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = navitiaCondition.h; sourceTree = "<group>"; };
+		B2C343A91A912859002C8726 /* navitiaCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = navitiaCondition.m; sourceTree = "<group>"; };
+		B2C343AA1A912859002C8726 /* NavitiaConditionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavitiaConditionView.xib; sourceTree = "<group>"; };
 		B2CF88171A827EFE005B71E9 /* MasterCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterCollectionViewCell.h; sourceTree = "<group>"; };
 		B2CF88181A827EFE005B71E9 /* MasterCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterCollectionViewCell.m; sourceTree = "<group>"; };
 		B2CF881A1A82A24B005B71E9 /* DetailCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCollectionViewCell.h; sourceTree = "<group>"; };
@@ -197,9 +203,6 @@
 		B2F508F01A8F77410083F5A5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B2F508F21A8F797C0083F5A5 /* Navitia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Navitia.h; sourceTree = "<group>"; };
 		B2F508F31A8F797C0083F5A5 /* Navitia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Navitia.m; sourceTree = "<group>"; };
-		B2F508F41A8F797C0083F5A5 /* navitiaCondition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = navitiaCondition.h; sourceTree = "<group>"; };
-		B2F508F51A8F797C0083F5A5 /* navitiaCondition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = navitiaCondition.m; sourceTree = "<group>"; };
-		B2F508F61A8F797C0083F5A5 /* NavitiaConditionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavitiaConditionView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +343,8 @@
 				B23B45521A8BD1D300B36BDF /* ActionsTableViewController.m */,
 				B23B454E1A8BCE8400B36BDF /* ConditionsTableViewController.h */,
 				B23B454F1A8BCE8400B36BDF /* ConditionsTableViewController.m */,
+				B2C343A51A912563002C8726 /* DeezerViewController.h */,
+				B2C343A61A912563002C8726 /* DeezerViewController.m */,
 				B22EA3221A7A422700455241 /* Main_iPhone.storyboard */,
 				B22EA3251A7A422700455241 /* Main_iPad.storyboard */,
 				B22EA31F1A7A422700455241 /* AppDelegate.h */,
@@ -410,8 +415,8 @@
 		B288A5661A8CFFA600EEED21 /* Conditions */ = {
 			isa = PBXGroup;
 			children = (
+				B2C343AD1A91285F002C8726 /* Navitia */,
 				B24CB8EF1A90D22000AA4A1A /* Debug */,
-				B2F508FA1A8F79970083F5A5 /* Navitia */,
 				B288A5711A8D264100EEED21 /* TimeCondition */,
 			);
 			name = Conditions;
@@ -489,6 +494,16 @@
 			name = Notification;
 			sourceTree = "<group>";
 		};
+		B2C343AD1A91285F002C8726 /* Navitia */ = {
+			isa = PBXGroup;
+			children = (
+				B2C343A81A912859002C8726 /* navitiaCondition.h */,
+				B2C343A91A912859002C8726 /* navitiaCondition.m */,
+				B2C343AA1A912859002C8726 /* NavitiaConditionView.xib */,
+			);
+			name = Navitia;
+			sourceTree = "<group>";
+		};
 		B2F508C31A8F756E0083F5A5 /* Deezer */ = {
 			isa = PBXGroup;
 			children = (
@@ -541,16 +556,6 @@
 				B2F508E11A8F76C30083F5A5 /* NSError+DZRModel.h */,
 			);
 			path = include;
-			sourceTree = "<group>";
-		};
-		B2F508FA1A8F79970083F5A5 /* Navitia */ = {
-			isa = PBXGroup;
-			children = (
-				B2F508F41A8F797C0083F5A5 /* navitiaCondition.h */,
-				B2F508F51A8F797C0083F5A5 /* navitiaCondition.m */,
-				B2F508F61A8F797C0083F5A5 /* NavitiaConditionView.xib */,
-			);
-			name = Navitia;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -637,8 +642,8 @@
 				B2F508E31A8F76C30083F5A5 /* DZRResources.bundle in Resources */,
 				B22EA3271A7A422700455241 /* Main_iPad.storyboard in Resources */,
 				B288A5701A8D226F00EEED21 /* MyfoxLightsActionView.xib in Resources */,
+				B2C343AC1A912859002C8726 /* NavitiaConditionView.xib in Resources */,
 				B288A5691A8D00C100EEED21 /* MyfoxHeaterActionView.xib in Resources */,
-				B2F508F91A8F797C0083F5A5 /* NavitiaConditionView.xib in Resources */,
 				B22EA32F1A7A422700455241 /* Images.xcassets in Resources */,
 				B22EA3241A7A422700455241 /* Main_iPhone.storyboard in Resources */,
 				B2F508C21A8F75690083F5A5 /* deezerActionView.xib in Resources */,
@@ -697,6 +702,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2C343AB1A912859002C8726 /* navitiaCondition.m in Sources */,
 				B2B003E21A8CE634007BCFEB /* MyfoxHeaterAction.m in Sources */,
 				B21FEA921A8E2857007C1B22 /* DebugAction.m in Sources */,
 				B22EA3211A7A422700455241 /* AppDelegate.m in Sources */,
@@ -712,10 +718,10 @@
 				B2F508E91A8F76FE0083F5A5 /* Deezer.m in Sources */,
 				B288A5651A8CFDD400EEED21 /* SetupViewController.m in Sources */,
 				B23B45501A8BCE8400B36BDF /* ConditionsTableViewController.m in Sources */,
+				B2C343A71A912563002C8726 /* DeezerViewController.m in Sources */,
 				B22EA31D1A7A422700455241 /* main.m in Sources */,
 				B2CF881C1A82A24B005B71E9 /* DetailCollectionViewCell.m in Sources */,
 				B23B454D1A8BC88A00B36BDF /* StepsTableViewController.m in Sources */,
-				B2F508F81A8F797C0083F5A5 /* navitiaCondition.m in Sources */,
 				B2F508F71A8F797C0083F5A5 /* Navitia.m in Sources */,
 				B23B45441A8B72E400B36BDF /* ScenarioListViewController.m in Sources */,
 				B21FEA961A8E46C2007C1B22 /* NSTimer+Blocks.m in Sources */,

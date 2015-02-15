@@ -125,12 +125,21 @@
             }];
         }];
     }];
+/*    self.sitesData = [NSMutableDictionary dictionaryWithDictionary:@{@"Lights": @{@"icon": @"LightBulb", @"data": @{@"Switches" : @[@{@"name": @"Living Room"}]}},
+                       @"Alarms": @{ @"icon": @"Alarm", @"data": @{} },
+                       @"Blinds": @{ @"icon": @"Blinds", @"data": @{} },
+                       @"Door": @{ @"icon": @"Door", @"data": @{} },
+                       @"Electric": @{ @"icon": @"Electric", @"data": @{} },
+                       //@"Music": @{ @"icon": @"Music", @"data": @{} },
+                       @"Heater": @{ @"icon": @"Heater", @"data": @{} }
+                                                                     }];
+    self.sites = [[self.sitesData keyEnumerator] allObjects];*/
 }
 
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return ([self.sites count]);
+    return ([self.sites count] + 1);
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -138,8 +147,17 @@
 }
 
 - (UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    MasterCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PwettyCell" forIndexPath:indexPath];
-    cell.imageView.image = [UIImage imageNamed:self.sitesData[self.sites[indexPath.row]][@"icon"]];
+    MasterCollectionViewCell *cell;
+    if (indexPath.row < [self.sites count])
+    {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PwettyCell" forIndexPath:indexPath];
+        cell.imageView.image = [UIImage imageNamed:self.sitesData[self.sites[indexPath.row]][@"icon"]];
+    }
+    else
+    {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DeezerCell" forIndexPath:indexPath];
+        cell.imageView.image = [UIImage imageNamed:@"Music"];
+    }
     cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
     cell.layer.masksToBounds = YES;
     cell.layer.shadowOpacity = 0.25f;
@@ -151,7 +169,7 @@
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@", self.sitesData[self.sites[indexPath.row]][@"data"]);
+    //NSLog(@"%@", self.sitesData[self.sites[indexPath.row]][@"data"]);
 //    [self performSegueWithIdentifier:@"ShowDetails" sender:self.sitesData[self.sites[indexPath.row]][@"data"]];
 }
 
@@ -160,9 +178,7 @@
     if ([segue.identifier isEqualToString:@"details"])
     {
         NSIndexPath *path = [[self.collectionView indexPathsForSelectedItems] lastObject];
-        NSLog(@"%@", self.sitesData[self.sites[path.row]]);
         NSDictionary *data = self.sitesData[self.sites[path.row]][@"data"];
-        NSLog(@"%@", data);
         [(DetailViewController*)segue.destinationViewController setDetailItem:@{@"key": self.sites[path.row], @"value": data}];
     }
     else if ([segue.identifier isEqualToString:@"showSettings"])

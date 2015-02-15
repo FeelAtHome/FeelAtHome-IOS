@@ -10,8 +10,6 @@
 #import "Deezer.h"
 #import "SetupViewController.h"
 
-Deezer *deezer;
-
 @interface deezerActionViewController : SetupViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *radioField;
 
@@ -20,7 +18,6 @@ Deezer *deezer;
 @implementation deezerAction
 {
     NSString*   radio;
-    Deezer*     deezer;
 }
 
 + (NSString*)name
@@ -40,8 +37,6 @@ Deezer *deezer;
 -(id) initWithCoder:decoder
 {
     radio = [decoder decodeObjectForKey:@"radio"];
-    deezer = [Deezer alloc];
-    [deezer deezerAuth];
     return self;
 }
 
@@ -55,7 +50,7 @@ Deezer *deezer;
 -(void) run{
     NSLog(@"[deezerAction run]");
     NSLog(@"%@", radio);
-    [deezer deezerPlayRadio: radio];
+    [[Deezer sharedInstance] deezerPlayRadio:radio];
 }
 
 + (deezerActionViewController*)setupView {
@@ -79,7 +74,6 @@ Deezer *deezer;
     self.canSave = YES;
     self.title = @"Radio configuration";
     //deezer = [Deezer alloc];
-    NSLog(@"%@", deezer);
     //[deezer deezerAuth];
     //do any additional setup after loading the view.
 }
@@ -87,8 +81,7 @@ Deezer *deezer;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    deezer = [Deezer alloc];
-    [deezer deezerAuth];
+    [Deezer sharedInstance];
 }
 
 -(void) saveParams{

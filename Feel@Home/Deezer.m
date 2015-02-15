@@ -18,6 +18,19 @@
     id nextToPlay;
 }
 
+
++ (Deezer*) sharedInstance
+{
+    static Deezer *deezer;
+    
+    if (deezer == nil)
+    {
+        deezer = [Deezer alloc];
+        [deezer deezerAuth];
+    }
+    return deezer;
+}
+
 -(void) deezerAuth
 {
     DeezerConnect *dzrconnect = [[DeezerConnect alloc] initWithAppId:@"150241" andDelegate:self];

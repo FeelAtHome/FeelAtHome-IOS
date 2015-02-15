@@ -12,6 +12,7 @@
 
 @interface Deezer : NSObject<DeezerSessionDelegate>
 @property DZRPlayer *player;
++(Deezer*) sharedInstance;
 -(void) deezerAuth;
 -(void) deezerPlayArtist: (NSString*) Artist;
 -(void) deezerPlayRadio: (id) Radio;

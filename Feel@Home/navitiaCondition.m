@@ -12,11 +12,10 @@
 #import "SetupViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface navitiaConditionViewController : SetupViewController<UITextFieldDelegate>
+@interface navitiaConditionViewController : SetupViewController<UITextFieldDelegate, CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *departureField;
 @property (weak, nonatomic) IBOutlet UITextField *arrivalField;
 @property (weak, nonatomic) IBOutlet UIDatePicker *atField;
-
 @end
 
 @implementation navitiaCondition
@@ -28,36 +27,48 @@
     Navitia*    navitia;
 }
 
-+ (NSString*)name
++(NSString*)name
 {
-    return @"Time to go work";
+    return @"When it's Time to Work";
 }
 
 -(id)initWithDictionary: (NSDictionary*) dict
 {
-    from = dict[@"from"];
-    to = dict[@"to"];
-    
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    [geocoder geocodeAddressString: from completionHandler:^(NSArray* placemarks, NSError* error){
-        for (CLPlacemark* aPlacemark in placemarks)
-        {
-            // Process the placemark.
-            NSString *latDest1 = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.latitude];
-            NSString *lngDest1 = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.longitude];
-            from = [NSString stringWithFormat: @"%@;%@", lngDest1, latDest1];
-        }
-    }];
-    [geocoder geocodeAddressString: to completionHandler:^(NSArray* placemarks, NSError* error){
-        for (CLPlacemark* aPlacemark in placemarks)
-        {
-            // Process the placemark.
-            NSString *latDest1 = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.latitude];
-            NSString *lngDest1 = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.longitude];
-            to = [NSString stringWithFormat: @"%@;%@", lngDest1, latDest1];
-        }
-    }];
+    from = dict[@"from"];
+    if([from isEqualToString: @"OK"])
+        from = dict[@"fromLocation"];
+    else
+    {
+        [geocoder geocodeAddressString: from completionHandler:^(NSArray* placemarks, NSError* error){
+            for (CLPlacemark* aPlacemark in placemarks)
+            {
+                // Process the placemark.
+                NSString *latDest1 = [NSString stringWithFormat:@"%.5f",aPlacemark.location.coordinate.latitude];
+                NSString *lngDest1 = [NSString stringWithFormat:@"%.5f",aPlacemark.location.coordinate.longitude];
+                from = [NSString stringWithFormat: @"%@;%@", lngDest1, latDest1];
+            }
+        }];
+    }
+    
+    to = dict[@"to"];
+    if([to isEqualToString:@"OK"])
+        to = dict[@"toLocation"];
+    else
+    {
+        [geocoder geocodeAddressString: to completionHandler:^(NSArray* placemarks, NSError* error){
+            for (CLPlacemark* aPlacemark in placemarks)
+            {
+                // Process the placemark.
+                NSString *latDest1 = [NSString stringWithFormat:@"%.5f",aPlacemark.location.coordinate.latitude];
+                NSString *lngDest1 = [NSString stringWithFormat:@"%.5f",aPlacemark.location.coordinate.longitude];
+                to = [NSString stringWithFormat: @"%@;%@", lngDest1, latDest1];
+            }
+        }];
+    }
     at = dict[@"at"];
+    NSLog(@"%@",from);
+    NSLog(@"%@",to);
     return self;
 }
 #pragma mark -NSCoding
@@ -75,15 +86,20 @@
 {
     [encoder encodeObject:from forKey:@"from"];
     [encoder encodeObject:to forKey:@"to"];
+    [encoder encodeObject:to forKey:@"at"];
 }
 
 #pragma mark -NSCoding
 
-- (void) getNextDepartureTime: (void(^)())cb {
++ (SetupViewController*)setupView {
+    return [[navitiaConditionViewController alloc] init];
+}
+
+- (void) startWithCb:(void (^)())cb {
     [navitia departureTimeToArriveAt:at from:from to:to withBlock:^(NSDate *stuff) {
        nextNotif = [NSTimer timerWithTimeInterval:[stuff timeIntervalSinceNow] invocation:[NSInvocation jr_invocationWithTarget:Nil block:^(id target) {
            cb();
-           [self getNextDepartureTime:cb];
+           [self startWithCb: cb];
        }] repeats:NO];
     }];
 }
@@ -100,14 +116,15 @@
         at =  [[NSCalendar currentCalendar] dateByAddingComponents:deltaComps toDate:at options:0];
 }
 
-+ (SetupViewController*)setupView {
-    return [[navitiaConditionViewController alloc] init];
-}
-
 @end
 
 @implementation navitiaConditionViewController
-
+{
+    CLLocationManager   *locationManager;
+    NSString            *fromLocate;
+    NSString            *toLocate;
+    NSString            *locate;
+}
 -(id)init{
     self = [super initWithNibName:@"NavitiaConditionView" bundle:nil];
     return self;
@@ -116,6 +133,7 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    locationManager = [[CLLocationManager alloc] init];
     self.canSave = YES;
     self.title = @"Journey configuration";
 }
@@ -124,8 +142,61 @@
     [self.delegate createObj:[[navitiaCondition alloc] initWithDictionary:@{
         @"from": self.departureField.text,
         @"to": self.arrivalField.text,
+        @"fromLocation": fromLocate,
+        @"toLocation": toLocate,
         @"at": self.atField.date
     }]];
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.departureField)
+        [self.arrivalField becomeFirstResponder];
+    else
+        [textField resignFirstResponder];
+    return YES;
+}
+
+- (IBAction)getDepartureLocation:(id)sender {
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
+    if(locate != nil)
+    {
+        self.departureField.text = @"OK";
+        fromLocate = locate;
+    }
+}
+
+- (IBAction)getArrivalLocation:(id)sender {
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [locationManager startUpdatingLocation];
+    if(locate != nil)
+    {
+        self.arrivalField.text = @"OK";
+        toLocate = locate;
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    if (currentLocation != nil) {
+        locate = [NSString stringWithFormat:@"%.5f;%.5f", currentLocation.coordinate.longitude, currentLocation.coordinate.latitude];
+    }
+    [locationManager stopUpdatingLocation];
 }
 
 @end

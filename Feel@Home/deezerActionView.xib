@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Radio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mBX-Cj-6kG" userLabel="Radio Text Field">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Radio ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mBX-Cj-6kG" userLabel="Radio Text Field">
                     <rect key="frame" x="20" y="80" width="280" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -24,12 +24,48 @@
                         <outlet property="delegate" destination="-1" id="7yW-DF-JBp"/>
                     </connections>
                 </textField>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Known ID :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwd-Df-Pka">
+                    <rect key="frame" x="20" y="118" width="85" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pop : 31061" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8k-nO-LlH">
+                    <rect key="frame" x="20" y="147" width="94" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Dance : 30951" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mX4-bz-6Gh">
+                    <rect key="frame" x="20" y="176" width="112" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pop : 31061" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgy-cp-i8n">
+                    <rect key="frame" x="20" y="205" width="94" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="mX4-bz-6Gh" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="ABn-xv-Uce"/>
+                <constraint firstItem="mX4-bz-6Gh" firstAttribute="top" secondItem="k8k-nO-LlH" secondAttribute="bottom" constant="8" id="Fvf-8h-NCB"/>
+                <constraint firstItem="Sgy-cp-i8n" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="Hce-uc-w1n"/>
+                <constraint firstItem="Rwd-Df-Pka" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="JPr-iT-bsS"/>
                 <constraint firstItem="mBX-Cj-6kG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1" secondAttribute="top" constant="80" id="Kca-uc-bRu"/>
+                <constraint firstItem="Sgy-cp-i8n" firstAttribute="top" secondItem="mX4-bz-6Gh" secondAttribute="bottom" constant="8" id="bwa-wr-xWU"/>
+                <constraint firstItem="k8k-nO-LlH" firstAttribute="top" secondItem="Rwd-Df-Pka" secondAttribute="bottom" constant="8" id="jp4-Ld-x40"/>
                 <constraint firstAttribute="trailing" secondItem="mBX-Cj-6kG" secondAttribute="trailing" constant="20" id="lCO-Cm-8MF"/>
+                <constraint firstItem="k8k-nO-LlH" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="qo1-EF-vaQ"/>
                 <constraint firstItem="mBX-Cj-6kG" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="wMw-6E-ptV"/>
+                <constraint firstItem="Rwd-Df-Pka" firstAttribute="top" secondItem="mBX-Cj-6kG" secondAttribute="bottom" constant="8" id="zxL-aj-jS9"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>

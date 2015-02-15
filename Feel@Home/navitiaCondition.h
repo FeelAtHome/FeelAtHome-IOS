@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "Condition.h"
-@interface navitiaCondition : NSObject
+@interface navitiaCondition : NSObject <Condition>
 
 @end
